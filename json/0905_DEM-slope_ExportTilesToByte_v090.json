@@ -1,0 +1,78 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-northlandease2n",
+    "tractid": "karttur-northlandease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": false,
+      "parameters": {
+
+        "palette": "slope",
+        "zscore": false,
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": "Slope (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "slope3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "slope",
+            "prefix": "slope",
+            "suffix": "v01-90m-3x3"
+          }
+        },
+        {
+          "slope9": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "slope",
+            "prefix": "slope",
+            "suffix": "v01-90m-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "slope3": {
+            "layerid": "slope",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        },
+        {
+          "slope9": {
+            "layerid": "slope",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        }
+      ]
+    }
+  ]
+}

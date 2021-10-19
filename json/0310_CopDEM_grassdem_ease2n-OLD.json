@@ -1,0 +1,84 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-northlandease2n",
+    "tractid": "karttur-northlandease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "Grass1to1Tiles",
+      "version": "1.3",
+      "overwrite": false,
+      "parameters": {
+        "asscript": false,
+        "mosaic": false,
+        "subparameter": [
+          {
+            "r.in.gdal": {
+              "flags": "e",
+              "input": "srcFPN",
+              "output": "srcFN"
+            },
+            "g.region": {
+              "flags": "s",
+              "raster": "srcFN"
+            },
+            "r.param.scale": {
+              "input": "srcFN",
+              "output": "x3xelev",
+              "method": "elev",
+              "size": 3
+            },
+            "r.out.gdal": {
+              "input": "x3xelev",
+              "output": "dstFPN"
+            },
+            "g.remove": {
+              "flags": "f",
+              "type": "raster",
+              "name": "x3xelev"
+            }
+          }
+        ]
+      },
+      "srcpath": {
+        "volume": "karttur",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "karttur",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "copdem90": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "copdem",
+            "prefix": "dem",
+            "suffix": "v01-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "copdem90": {
+            "source": "copy",
+            "product": "copy",
+            "content": "copy",
+            "layerid": "copy",
+            "prefix": "copy",
+            "suffix": "v01-90m-grass-3x3"
+          }
+        }
+      ]
+    }
+  ]
+}

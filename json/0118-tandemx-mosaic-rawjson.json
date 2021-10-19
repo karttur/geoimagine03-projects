@@ -1,0 +1,44 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "MosaicAncillary",
+      "overwrite": false,
+      "parameters": {
+        "mosaiccode": "subdirfiles",
+        "datadir": "RAWAUXILIARY/TDM90/DEM",
+        "datafile": "tandemx_mosaic"
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "vrt"
+      },
+      "dstcomp": [
+        {
+          "tandemx": {
+            "source": "DLR",
+            "product": "tandemx",
+            "content": "dem",
+            "layerid": "tandemx90",
+            "prefix": "dem90",
+            "suffix": "v01"
+          }
+        }
+      ]
+    }
+  ]
+}

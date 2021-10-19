@@ -1,0 +1,9 @@
+
+# Import Natural Earth Physical 1:110m
+# ancillary-import-NaturalEarth.xml
+
+# Download GMTED2010 tiles
+# json/0115-ancillary-download-GMTED2010.json
+
+# Import GMTED2010
+# json/ancillary-import-GMTED2010.json

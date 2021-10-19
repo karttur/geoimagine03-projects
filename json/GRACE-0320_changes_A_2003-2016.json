@@ -1,0 +1,67 @@
+{
+  "postgresdb": {
+    "db": "geoimagine"
+  },
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "startyear": 2003,
+    "endyear": 2016,
+    "timestep": "timespan-A"
+  },
+  "process": {
+    "processid": "SignificantTrends",
+    "overwrite": true,
+    "parameters": {
+      "basename": "grace-ave",
+      "threshold": "1.96"
+    },
+    "srcpath": {
+      "volume": "africa",
+      "hdr": "tif",
+      "dat": "tif"
+    },
+    "dstpath": {
+      "volume": "africa",
+      "hdr": "tif",
+      "dat": "tif"
+    },
+    "srccomp": [
+      {
+        "mk-z-grace-ave": {
+          "id": "significance",
+          "source": "NASA-GRACE",
+          "product": "cmwater",
+          "content": "cmwater-A-trend",
+          "layerid": "mk-z-grace-ave",
+          "prefix": "mk-z-grace-ave",
+          "suffix": "RL05-f-A"
+        },
+        "ts-mdsl-grace-ave": {
+          "id": "slope",
+          "source": "NASA-GRACE",
+          "product": "cmwater",
+          "content": "cmwater-A-trend",
+          "layerid": "ts-mdsl-grace-ave",
+          "prefix": "ts-mdsl-grace-ave",
+          "suffix": "RL05-f-A"
+        },
+        "ts-ic-grace-ave": {
+          "id": "intercept",
+          "source": "NASA-GRACE",
+          "product": "cmwater",
+          "content": "cmwater-A-trend",
+          "layerid": "ts-ic-grace-ave",
+          "prefix": "ts-ic-grace-ave",
+          "suffix": "RL05-f-A"
+        }
+      }
+    ]
+  }
+}

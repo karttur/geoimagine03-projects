@@ -1,0 +1,78 @@
+{
+  "postgresdb": {
+    "db": "geoimagine"
+  },
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "startyear": 2002,
+    "startmonth": 4,
+    "endyear": 2017,
+    "endmonth": 5,
+    "timestep": "M"
+  },
+  "process": [
+    {
+      "processid": "OverlayManyToOne",
+      "overwrite": true,
+      "parameters": {
+        "copycomp": "grace-gfz",
+        "validfraction": 0.7,
+        "statistic": "average"
+      },
+      "srcpath": {
+        "volume": "karttur",
+        "hdrfiletype": "tif",
+        "datfiletype": "tif"
+      },
+      "dstpath": {
+        "volume": "karttur",
+        "hdrfiletype": "tif",
+        "datfiletype": "tif"
+      },
+      "srccomp": [
+        {
+          "grace-csr": {
+            "source": "nasa-grace",
+            "product": "grace-csr",
+            "content": "land-mass",
+            "layerid": "cm-water",
+            "prefix": "cm-water",
+            "suffix": "RL06-v03-filled"
+          },
+          "grace-gfz": {
+            "source": "nasa-grace",
+            "product": "grace-csr",
+            "content": "land-mass",
+            "layerid": "cm-water",
+            "prefix": "cm-water",
+            "suffix": "RL06-v03-filled"
+          },
+          "grace-jpl": {
+            "source": "nasa-grace",
+            "product": "gfz-cmwater",
+            "content": "cmwater",
+            "layerid": "grace-gfz",
+            "prefix": "grace-jpl",
+            "suffix": "RL06-v03-filled"
+          }
+        }
+      ],
+      "dstcomp": [
+        {
+          "grace-ave": {
+            "layerid": "grace-avg",
+            "prefix": "grace-avg",
+            "suffix": "RL06-v03-filled"
+          }
+        }
+      ]
+    }
+  ]
+}

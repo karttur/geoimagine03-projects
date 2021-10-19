@@ -1,0 +1,14 @@
+###################################
+###################################
+###           USERS             ###
+###################################
+###################################
+
+## User for the Artic ##
+## json/add_user_projects-regions_arctic.json
+
+## Add user karttur projects and regions Arctic hydrology
+json/add_user_projects-regions_arctic-hydro.json
+
+## User for national regions ##
+## json/add_user_projects-national.json

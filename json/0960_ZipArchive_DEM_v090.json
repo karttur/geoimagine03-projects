@@ -1,0 +1,827 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-northlandease2n",
+    "tractid": "karttur-northlandease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "dem": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "dem90",
+            "prefix": "dem",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "dem": {
+            "layerid": "dem90",
+            "prefix": "dem",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "flowdir": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "flowdir",
+            "layerid": "flowdir90",
+            "prefix": "flowdir",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "flowdir": {
+            "layerid": "flowdir90",
+            "prefix": "flowdir",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "tci": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "tci90",
+            "prefix": "tci",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tci": {
+            "content": "topowetness",
+            "layerid": "tci90",
+            "prefix": "tci",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "updrain": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "mfd-updrain90",
+            "prefix": "mfd-updrain",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "updrain": {
+            "content": "updrain",
+            "layerid": "mfd-updrain90",
+            "prefix": "mfd-updrain",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "hydraulhead": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "hydraulhead90",
+            "prefix": "hydraulhead",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "hydraulhead": {
+            "content": "HAND",
+            "layerid": "hydraulhead90",
+            "prefix": "hydraulhead",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "stream-dist": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "stream-dist90",
+            "prefix": "stream-dist",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "stream-dist": {
+            "content": "HAND",
+            "layerid": "stream-dist90",
+            "prefix": "stream-dist",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "tri3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tri",
+            "prefix": "tri",
+            "suffix": "v01-90m-3x3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tri3": {
+            "content": "ruggedness",
+            "layerid": "tri",
+            "prefix": "tri",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "tri9": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tri",
+            "prefix": "tri",
+            "suffix": "v01-90m-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tri9": {
+            "content": "ruggedness",
+            "layerid": "tri",
+            "prefix": "tri",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "slope9": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "slope",
+            "prefix": "slope",
+            "suffix": "v01-90m-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "slope9": {
+            "content": "slope",
+            "layerid": "slope",
+            "prefix": "slope",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "slope3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "slope",
+            "prefix": "slope",
+            "suffix": "v01-90m-3x3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "slope3": {
+            "content": "slope",
+            "layerid": "slope",
+            "prefix": "slope",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "geomorph3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "geomorph",
+            "prefix": "geomorph",
+            "suffix": "v01-90m-grass-3x3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "geomorph3": {
+            "content": "landform",
+            "layerid": "geomorph",
+            "prefix": "geomorph",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "geomorph5": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "geomorph",
+            "prefix": "geomorph",
+            "suffix": "v01-90m-grass-5x5-elev3x3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "geomorph5": {
+            "content": "landform",
+            "layerid": "geomorph",
+            "prefix": "geomorph",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "geomorph9": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "geomorph",
+            "prefix": "geomorph",
+            "suffix": "v01-90m-grass-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "geomorph9": {
+            "content": "landform",
+            "layerid": "geomorph",
+            "prefix": "geomorph",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "lf": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "landform-TPI",
+            "prefix": "landform-TPI",
+            "suffix": "v01-90m-np-stnd-1+3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "lf": {
+            "content": "landform",
+            "layerid": "landform-TPI",
+            "prefix": "landform-TPI",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "lf": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "landform-ps",
+            "prefix": "landform-ps",
+            "suffix": "v01-90m-grass-3x3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "lf": {
+            "content": "landform",
+            "layerid": "landform-ps",
+            "prefix": "landform-ps",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "lf": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "landform-ps",
+            "prefix": "landform-ps",
+            "suffix": "v01-90m-grass-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "lf": {
+            "content": "landform",
+            "layerid": "landform-ps",
+            "prefix": "landform-ps",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "tpi": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tpi",
+            "prefix": "tpi",
+            "suffix": "v01-pfpf-hydrdem4+4-90m-3x3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tpi": {
+            "content": "tpi",
+            "layerid": "tpi",
+            "prefix": "tpi",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "tpi": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tpi",
+            "prefix": "tpi",
+            "suffix": "v01-pfpf-hydrdem4+4-90m-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tpi": {
+            "content": "tpi",
+            "layerid": "tpi",
+            "prefix": "tpi",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "tri": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tri",
+            "prefix": "tri",
+            "suffix": "v01-pfpf-hydrdem4+4-90m-3x3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tri": {
+            "content": "tri",
+            "layerid": "tri",
+            "prefix": "tri",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "tri": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tri",
+            "prefix": "tri",
+            "suffix": "v01-pfpf-hydrdem4+4-90m-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tri": {
+            "content": "tri",
+            "layerid": "tri",
+            "prefix": "tri",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "slope": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "slope",
+            "prefix": "tri",
+            "suffix": "v01-pfpf-hydrdem4+4-90m-3x3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "slope": {
+            "content": "slope",
+            "layerid": "slope",
+            "prefix": "slope",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "slope": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "slope",
+            "prefix": "tri",
+            "suffix": "v01-pfpf-hydrdem4+4-90m-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "slope": {
+            "content": "slope",
+            "layerid": "slope",
+            "prefix": "slope",
+            "suffix": "copy"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-northlandease2n",
+    "tractid": "karttur-northlandease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+
+
+
+    {
+      "processid": "ZipArchiveTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "TropWet",
+        "hdr": "tar.gz"
+      },
+      "srccomp": [
+        {
+          "tpi": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tpi",
+            "prefix": "tpi",
+            "suffix": "v01-pfpf-hydrdem4+4-90m-3x3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tpi": {
+            "content": "tpi",
+            "layerid": "tpi",
+            "prefix": "tpi",
+            "suffix": "copy"
+          }
+        }
+      ]
+    }
+
+  ]
+}

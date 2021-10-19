@@ -1,0 +1,30 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-arcticdemext",
+    "tractid": "karttur-arcticdemext",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "DownloadAncillary",
+      "overwrite": false,
+      "parameters": {
+        "downloadcode": "filelist",
+        "path": "DOWNLOADS/Metria/markdata/Metria-Svenska_markdata.txt",
+        "datadir": "RAWAUXILIARY/Metria/markdata"
+      },
+      "srcpath": {
+        "volume": "karttur"
+      },
+      "dstpath": {
+        "volume": "karttur"
+      }
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "MosaicAncillary",
+      "overwrite": false,
+      "parameters": {
+        "mosaiccode": "subdirfiles",
+        "datadir": "/Volumes/Ancillary/RAWAUXILIARY/CODEM30",
+        "datafile": "COPDEM30_mosaic"
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "vrt"
+      },
+      "dstcomp": [
+        {
+          "copdem30": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "copdem30",
+            "prefix": "dem",
+            "suffix": "v01"
+          }
+        }
+      ]
+    }
+  ]
+}

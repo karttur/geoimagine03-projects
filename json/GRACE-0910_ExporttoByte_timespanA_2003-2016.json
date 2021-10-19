@@ -1,0 +1,234 @@
+{
+  "postgresdb": {
+    "db": "geoimagine"
+  },
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "startyear": 2003,
+    "endyear": 2016,
+    "timestep": "timespan-A"
+  },
+  "process": [
+    {
+      "processid": "ExportToByte",
+      "overwrite": true,
+      "parameters": {
+        "palette": "grace",
+        "width": 720,
+        "crop": "720,360,0,0",
+        "emboss": "KARTTUR",
+        "embossdims": "720,150",
+        "embossptsize": 100,
+        "vectoroverlay": "/Volumes/africa/export/naturalearth/region/graticulse/global/0/graticules-45deg_graticules_global_0_GRACE2.svg",
+        "border": 2,
+        "bordercolor": "black"
+      },
+      "srcpath": {
+        "volume": "africa",
+        "hdr": "tif",
+        "dat": "tif"
+      },
+      "dstpath": {
+        "volume": "africa",
+        "hdr": "tif",
+        "dat": "tif"
+      },
+      "srccomp": {
+        "avg-grace-ave": {
+          "id": "value",
+          "source": "NASA-GRACE",
+          "product": "ave-cmwater",
+          "content": "cmwater-A-stats",
+          "layerid": "avg-grace-ave",
+          "prefix": "avg-grace-ave",
+          "suffix": "RL05-f-A"
+        }
+      }
+    },
+    {
+      "processid": "exporttobyteancillary",
+      "overwrite": true,
+      "parameters": {
+        "palette": "grace",
+        "width": 720,
+        "crop": "720,360,0,0",
+        "emboss": "KARTTUR",
+        "embossdims": "720,150",
+        "embossptsize": 100,
+        "vectoroverlay": "/Volumes/africa/export/naturalearth/region/graticulse/global/0/graticules-45deg_graticules_global_0_GRACE2.svg",
+        "border": 2,
+        "bordercolor": "black",
+        "jpg": 72
+      },
+      "srcpath": {
+        "volume": "africa",
+        "hdr": "tif",
+        "dat": "tif"
+      },
+      "dstpath": {
+        "volume": "africa",
+        "hdr": "tif",
+        "dat": "tif"
+      },
+      "srccomp": {
+        "std-grace-ave": {
+          "id": "value",
+          "source": "NASA-GRACE",
+          "product": "ave-cmwater",
+          "content": "cmwater-A-stats",
+          "layerid": "std-grace-ave",
+          "prefix": "std-grace-ave",
+          "suffix": "RL05-filled"
+        }
+      }
+    },
+    {
+      "processid": "exporttobyteancillary",
+      "overwrite": true,
+      "parameters": {
+        "palette": "zhydro",
+        "width": 720,
+        "crop": "720,360,0,0",
+        "emboss": "KARTTUR",
+        "embossdims": "720,150",
+        "embossptsize": 100,
+        "vectoroverlay": "/Volumes/africa/export/naturalearth/region/graticulse/global/0/graticules-45deg_graticules_global_0_GRACE2.svg",
+        "border": 2,
+        "bordercolor": "black",
+        "jpg": 72
+      },
+      "srcpath": {
+        "volume": "africa",
+        "hdr": "tif",
+        "dat": "tif"
+      },
+      "dstpath": {
+        "volume": "africa",
+        "hdr": "tif",
+        "dat": "tif"
+      },
+      "srccomp": [
+        {
+          "mk-z-grace-ave": {
+            "id": "value",
+            "source": "NASA-GRACE",
+            "product": "ave-cmwater",
+            "content": "cmwater-A-trend",
+            "layerid": "mk-z-grace-ave",
+            "prefix": "mk-z-grace-ave",
+            "suffix": "RL05-filled"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "exporttobyteancillary",
+      "overwrite": true,
+      "parameters": {
+        "palette": "grace",
+        "width": 720,
+        "crop": "720,360,0,0",
+        "emboss": "KARTTUR",
+        "embossdims": "720,150",
+        "embossptsize": 100,
+        "vectoroverlay": "/Volumes/africa/export/naturalearth/region/graticulse/global/0/graticules-45deg_graticules_global_0_GRACE2.svg",
+        "border": 2,
+        "bordercolor": "black",
+        "jpg": 72
+      },
+      "srcpath": {
+        "volume": "africa",
+        "hdr": "tif",
+        "dat": "tif"
+      },
+      "dstpath": {
+        "volume": "africa",
+        "hdr": "tif",
+        "dat": "tif"
+      },
+      "srccomp": [
+        {
+          "ts-mdsl-grace-ave": {
+            "id": "1",
+            "source": "NASA-GRACE",
+            "product": "ave-cmwater",
+            "content": "cmwater-A-trend",
+            "layerid": "ts-mdsl-grace-ave",
+            "prefix": "mk-z-grace-ave",
+            "suffix": "RL05-filled"
+          },
+          "ts-hisl-grace-ave": {
+            "id": "2",
+            "source": "NASA-GRACE",
+            "product": "ave-cmwater",
+            "content": "cmwater-A-trend",
+            "layerid": "ts-hisl-grace-ave",
+            "prefix": "mk-z-grace-ave",
+            "suffix": "RL05-filled"
+          },
+          "ts-losl-grace-ave": {
+            "id": "3",
+            "source": "NASA-GRACE",
+            "product": "ave-cmwater",
+            "content": "cmwater-A-trend",
+            "layerid": "ts-losl-grace-ave",
+            "prefix": "mk-z-grace-ave",
+            "suffix": "RL05-filled"
+          },
+          "ts-ic-grace-ave": {
+            "id": "4",
+            "source": "NASA-GRACE",
+            "product": "ave-cmwater",
+            "content": "cmwater-A-trend",
+            "layerid": "ts-ic-grace-ave",
+            "prefix": "mk-z-grace-ave",
+            "suffix": "RL05-filled"
+          },
+          "ols-sl-grace-ave": {
+            "id": "5",
+            "source": "NASA-GRACE",
+            "product": "ave-cmwater",
+            "content": "cmwater-A-trend",
+            "layerid": "ols-sl-grace-ave",
+            "prefix": "mk-z-grace-ave",
+            "suffix": "RL05-filled"
+          },
+          "ols-ic-grace-ave": {
+            "id": "6",
+            "source": "NASA-GRACE",
+            "product": "ave-cmwater",
+            "content": "cmwater-A-trend",
+            "layerid": "ols-ic-grace-ave",
+            "prefix": "mk-z-grace-ave",
+            "suffix": "RL05-filled"
+          },
+          "ols-r2-grace-ave": {
+            "id": "7",
+            "source": "NASA-GRACE",
+            "product": "ave-cmwater",
+            "content": "cmwater-A-trend",
+            "layerid": "ols-r2-grace-ave",
+            "prefix": "mk-z-grace-ave",
+            "suffix": "RL05-filled"
+          },
+          "ols-rmse-grace-ave": {
+            "id": "8",
+            "source": "NASA-GRACE",
+            "product": "ave-cmwater",
+            "content": "cmwater-A-trend",
+            "layerid": "ols-rmse-grace-ave",
+            "prefix": "mk-z-grace-ave",
+            "suffix": "RL05-filled"
+          }
+        }
+      ]
+    }
+  ]
+}

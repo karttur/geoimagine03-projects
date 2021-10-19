@@ -1,0 +1,40 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "modis"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "path": null,
+  "process": [
+    {
+      "processid": "LinkDefaultRegionTiles",
+      "version": "0.9",
+      "parameters": {
+        "dummy": null
+        },
+      "srcpath": {
+        "volume": "SMAP",
+        "hdr": "shp",
+        "dat": "shp"
+      },
+      "srccomp": [
+        {
+          "regions": {
+            "source": "karttur",
+            "product": "roi",
+            "content": "pubroi",
+            "layerid": "defreg",
+            "prefix": "defreg",
+            "suffix": "v010"
+          }
+        }
+      ]
+    }
+  ]
+}

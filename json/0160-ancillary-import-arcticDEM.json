@@ -1,0 +1,96 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-arcticdemext",
+    "tractid": "karttur-arcticdemext",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "OrganizeAncillary",
+      "overwrite": false,
+      "parameters": {
+        "importcode": "tif",
+        "epsg": "3413",
+        "orgid": "NGA-NSF",
+        "dsname": "arctiddem",
+        "dsversion": "3.0",
+        "accessdate": "20181110",
+        "regionid": "arcticdem",
+        "regioncat": "global",
+        "dataurl": "",
+        "metaurl": "",
+        "title": "Arctic DEM",
+        "label": "Arctice Digitial Surface Model"
+      },
+      "srcpath": {
+        "volume": "karttur",
+        "hdr": "tif",
+        "dat": "tif"
+      },
+      "dstpath": {
+        "volume": "karttur",
+        "hdr": "tif",
+        "dat": "tif"
+      },
+      "srcraw": [
+        {
+          "dem500": {
+            "datadir": "ancillary/arcticdem",
+            "datafile": "arcticdem_mosaic_500m_v3.0",
+            "datalayer": "DEM",
+            "title": "Arctic DEM",
+            "label": "Arctice Digitial Surface Modeln"
+          },
+          "dem100": {
+            "datadir": "ancillary/arcticdem",
+            "datafile": "arcticdem_mosaic_100m_v3.0",
+            "title": "Arctic DEM",
+            "label": "Arctice Digitial Surface Modeln"
+          }
+        }
+      ],
+      "dstcomp": [
+        {
+          "dem500": {
+            "source": "NGA-NSF",
+            "product": "arcticdem",
+            "content": "dem",
+            "layerid": "dem500",
+            "prefix": "dem500",
+            "suffix": "v30",
+            "scalefac": 1,
+            "offsetadd": 0,
+            "dataunit": "masl",
+            "celltype": "Float32",
+            "cellnull": -9999,
+            "measure": "R",
+            "masked": "N"
+          }
+        },
+        {
+          "dem100": {
+            "source": "NGA-NSF",
+            "product": "arcticdem",
+            "content": "dem",
+            "layerid": "dem100",
+            "prefix": "dem100",
+            "suffix": "v30",
+            "scalefac": 1,
+            "offsetadd": 0,
+            "dataunit": "masl",
+            "celltype": "Float32",
+            "cellnull": -9999,
+            "measure": "R",
+            "masked": "N"
+          }
+        }
+      ]
+    }
+  ]
+}

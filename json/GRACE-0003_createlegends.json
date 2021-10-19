@@ -1,0 +1,30 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "system"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": {
+    "processid": "CreateLegend",
+    "overwrite": true,
+    "parameters": {
+      "columnhead": "Water depth (cm)",
+      "precision": "0"
+    },
+    "comp": [
+      {
+        "source": "NASA-GRACE",
+        "product": "ave-cmwater",
+        "content": "cmwater-A-stats",
+        "layerid": "avg-grace-ave",
+        "suffix": "RL05-f-A"
+      }
+    ]
+  }
+}

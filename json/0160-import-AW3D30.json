@@ -1,0 +1,71 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "OrganizeAncillary",
+      "overwrite": false,
+      "parameters": {
+        "importcode": "vrt",
+        "epsg": "4326",
+        "orgid": "DLR",
+        "dsname": "aw3d30",
+        "dsversion": "1.0",
+        "accessdate": "20210321",
+        "regionid": "global",
+        "regioncat": "global",
+        "dataurl": "https://www.eorc.jaxa.jp/ALOS/en/aw3d30/index.htm",
+        "metaurl": "https://portal.opentopography.org/raster?opentopoID=OTALOS.112016.4326.2",
+        "title": "ALOS World 3D - 30m (AW3D30)",
+        "label": "ALOS Global Digital Surface Model ALOS World 3D - 30m (AW3D30)"
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "vrt"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "vrt"
+      },
+      "srcraw": [
+        {
+          "aw3d30": {
+            "datadir": "RAWAUXILIARY/AW3D30",
+            "datafile": "AW3D30_alos",
+            "datalayer": "DEM",
+            "title": "ALOS World 3D - 30m (AW3D30)",
+            "label": "ALOS Global Digital Surface Model ALOS World 3D - 30m (AW3D30)"
+          }
+        }
+      ],
+      "dstcomp": [
+        {
+          "aw3d30": {
+            "source": "ALOS",
+            "product": "aw3d30",
+            "content": "dem",
+            "layerid": "aw3d30",
+            "prefix": "dem30",
+            "suffix": "v01",
+            "scalefac": 1,
+            "offsetadd": 0,
+            "dataunit": "masl",
+            "celltype": "Int16",
+            "cellnull": -9999,
+            "measure": "R",
+            "masked": "N"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-northlandease2n",
+    "tractid": "karttur-northlandease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "GrassOnetoManyTiles",
+      "version": "1.3",
+      "overwrite": true,
+      "dryrun": false,
+      "verbose": 1,
+      "parameters": {
+        "regionlayer": "DEM",
+        "asscript": true,
+        "mosaic": true,
+        "subparameter": [
+          {
+            "null": {
+              "data": "\"$(r.stats -p input=landDEM null_value='null')\""
+            }
+          },
+          {
+            "null": {
+              "null": "if echo \"$data\" | grep -q \"null\"; then"
+            }
+          },
+          {
+            "null": {
+              "null": "echo \"Coastline tile\""
+            }
+          },
+          {
+            "r.mapcalc": {
+              "\"shoreline ": " if((shorep1>0 && inland_comp_DEM>=0),1,null())\"",
+              "overwrite": true
+            }
+          },
+          {
+            "null": {
+              "null": "else"
+            }
+          },
+          {
+            "r.mapcalc": {
+              "\"inland_comp_DEM ": " landDEM\"",
+              "overwrite": true
+            }
+          },
+          {
+            "null": {
+              "null": "fi"
+            }
+          }
+        ]
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "*": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "copdem",
+            "prefix": "dem",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "terminal_clumps-out": {
+            "source": "copy",
+            "product": "copy",
+            "content": "terminal-polys",
+            "layerid": "terminal-polys",
+            "prefix": "terminal-polys",
+            "suffix": "v01-pfpf-hydrdem4+4-90m",
+            "ext": ".shp"
+          }
+        },
+        {
+          "inland_comp_DEM-out": {
+            "source": "copy",
+            "product": "copy",
+            "content": "landdem",
+            "layerid": "land-dem",
+            "prefix": "land-dem",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ]
+    }
+  ]
+}

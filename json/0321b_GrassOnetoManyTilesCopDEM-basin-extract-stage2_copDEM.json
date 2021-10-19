@@ -1,0 +1,365 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-northlandease2n",
+    "tractid": "karttur-northlandease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "GrassOnetoManyTiles",
+      "version": "1.3",
+
+      "overwrite": true,
+      "dryrun": false,
+      "verbose": 1,
+      "parameters": {
+        "regionlayer": "DEM",
+        "asscript": true,
+        "mosaic": true,
+        "subparameter": [
+          {
+            "g.region": {
+              "raster": "originalTile"
+            }
+          },
+          {
+            "null": {
+              "data": "\"$(r.stats -p input=landDEM null_value='null')\""
+            }
+          },
+          {
+            "null": {
+              "null": "if echo \"$data\" | grep -q \"null\"; then"
+            }
+          },
+          {
+            "null": {
+              "null": "echo \"Coastline tile\""
+            }
+          },
+          {
+            "g.region": {
+              "raster": "DEM"
+            }
+          },
+          {
+            "r.watershed": {
+              "flags": "a",
+              "elevation": "inland_comp_DEM",
+              "accumulation": "MFDupstream",
+              "drainage": "MFDflowdir",
+              "threshold": 617,
+              "memory": 4000,
+              "overwrite": true
+            }
+          },
+          {
+            "r.watershed": {
+              "flags": "as",
+              "elevation": "inland_comp_DEM",
+              "accumulation": "SFDupstream",
+              "threshold": 617,
+              "memory": 4000,
+              "overwrite": true
+            }
+          },
+          {
+            "g.region": {
+              "raster": "originalTile"
+            }
+          },
+          {
+            "r.mapcalc": {
+              "\"basin_SFD_outlets ": " if((shoreline > 0), if ((SFDupstream >= 617),SFDupstream,null() ) , null())\"",
+              "overwrite": true
+            }
+          },
+          {
+            "r.mapcalc": {
+              "\"basin_MFD_outlets ": " if((shoreline > 0), if ((MFDupstream >= 617),MFDupstream,null() ) , null())\"",
+              "overwrite": true
+            }
+          },
+          {
+            "r.mapcalc": {
+              "\"basin_shoreline_outlets ": " if ((isnull(basin_SFD_outlets)), basin_MFD_outlets, basin_SFD_outlets)\"",
+              "overwrite": true
+            }
+          },
+          {
+            "r.to.vect": {
+              "input": "basin_shoreline_outlets",
+              "output": "basin_outlet_pt",
+              "type": "point",
+              "overwrite": true
+            }
+          },
+          {
+            "g.region": {
+              "raster": "DEM"
+            }
+          },
+          {
+            "r.mapcalc": {
+              "\"lowlevel_DEM ": " if((DEM <= 1), 0, null())\"",
+              "overwrite": true
+            }
+          },
+          {
+            "r.cost": {
+              "input": "lowlevel_DEM",
+              "output": "lowlevel_outlet_costgrow",
+              "start_points": "basin_outlet_pt",
+              "max_cost": 0,
+              "mem": 4000,
+              "overwrite": true
+            }
+          },
+          {
+            "r.clump": {
+              "flags": "d",
+              "input": "lowlevel_outlet_costgrow",
+              "output": "lowlevel_outlet_clumps",
+              "overwrite": true
+            }
+          },
+          {
+            "r.mapcalc": {
+              "\"shoreline_DEM ": " if((shoreline > 0 && DEM <= 0), 0, null())\"",
+              "overwrite": true
+            }
+          },
+          {
+            "r.cost": {
+              "input": "shoreline_DEM",
+              "output": "shoreline_outlet_costgrow",
+              "start_points": "basin_outlet_pt",
+              "max_cost": 0,
+              "mem": 6000,
+              "overwrite": true
+            }
+          },
+          {
+            "r.clump": {
+              "flags": "d",
+              "input": "shoreline_outlet_costgrow",
+              "output": "shoreline_outlet_clumps",
+              "overwrite": true
+            }
+          },
+          {
+            "r.to.vect": {
+              "input": "shoreline_outlet_clumps",
+              "output": "basin_all_outlets_pt",
+              "type": "point",
+              "overwrite": true
+            }
+          },
+          {
+            "v.db.addcolumn": {
+              "map": "basin_all_outlets_pt",
+              "columns": "\"upstream DOUBLE PRECISION, mfdup DOUBLE PRECISION, sfdup DOUBLE PRECISION, elevation DOUBLE PRECISION, mouth_id INT, basin_id INT\"",
+              "overwrite": true
+            }
+          },
+          {
+            "v.what.rast": {
+              "map": "basin_all_outlets_pt",
+              "raster": "SFDupstream",
+              "column": "sfdup",
+              "overwrite": true
+            }
+          },
+          {
+            "v.what.rast": {
+              "map": "basin_all_outlets_pt",
+              "raster": "MFDupstream",
+              "column": "mfdup",
+              "overwrite": true
+            }
+          },
+          {
+            "v.what.rast": {
+              "map": "basin_all_outlets_pt",
+              "raster": "DEM",
+              "column": "elevation",
+              "overwrite": true
+            }
+          },
+          {
+            "v.what.rast": {
+              "map": "basin_all_outlets_pt",
+              "raster": "shoreline_outlet_clumps",
+              "column": "mouth_id",
+              "overwrite": true
+            }
+          },
+          {
+            "v.what.rast": {
+              "map": "basin_all_outlets_pt",
+              "raster": "lowlevel_outlet_clumps",
+              "column": "basin_id",
+              "overwrite": true
+            }
+          },
+          {
+            "db.execute": {
+              "sql": "\"UPDATE basin_all_outlets_pt SET upstream=mfdup\"",
+              "overwrite": true
+            }
+          },
+          {
+            "db.execute": {
+              "sql": "\"UPDATE basin_all_outlets_pt SET upstream=sfdup WHERE sfdup>mfdup\"",
+              "overwrite": true
+            }
+          },
+          {
+            "v.to.db": {
+              "map": "basin_all_outlets_pt",
+              "option": "coor",
+              "columns": "xcoord,ycoord",
+              "overwrite": true
+            }
+          },
+          {
+            "v.out.ogr": {
+              "type": "point",
+              "input": "basin_all_outlets_pt",
+              "format": "ESRI_Shapefile",
+              "output": "allOutletsfpn_s2",
+              "overwrite": true
+            }
+          },
+          {
+            "r.buffer": {
+              "input": "shoreline_outlet_clumps",
+              "output": "mouth_buffer",
+              "distances": 128.56,
+              "units": "meter",
+              "overwrite": true
+            }
+          },
+          {
+            "r.mapcalc": {
+              "\"thickwall ": " if((terminal_drain == 1 && mouth_buffer > 1), 1, null())\"",
+              "overwrite": true
+            }
+          },
+          {
+            "r.mapcalc": {
+              "\"terminal_drain_remain ": " if((terminal_drain == 1),  if ((isnull(thickwall)),1, null() ),null() )\"",
+              "overwrite": true
+            }
+          },
+          {
+            "r.buffer": {
+              "input": "terminal_drain_remain",
+              "output": "mouthshoreline",
+              "distances": 128.56,
+              "units": "meter",
+              "overwrite": true
+            }
+          },
+          {
+            "r.mapcalc": {
+              "\"shorewall ": " if((mouthshoreline > 0 && thickwall == 1 && isnull(inland_comp_DEM)), 9999, null())\"",
+              "overwrite": true
+            }
+          },
+          {
+            "r.to.vect": {
+              "input": "shorewall",
+              "output": "shorewall_pt",
+              "type": "point",
+              "overwrite": true
+            }
+          },
+          {
+            "v.out.ogr": {
+              "type": "point",
+              "input": "shorewall_pt",
+              "format": "ESRI_Shapefile",
+              "output": "shorewall_pt_out",
+              "overwrite": true
+            }
+          },
+          {
+            "r.mapcalc": {
+              "\"fillholeDEM ": " if ((thickwall==1 && isnull(shorewall)),9999, null() )\"",
+              "overwrite": true
+            }
+          },
+
+
+          {
+            "null": {
+              "null": "else"
+            }
+          },
+          {
+            "null": {
+              "null": "echo \"Inland tile\""
+            }
+          },
+
+          {
+            "null": {
+              "null": "fi"
+            }
+          }
+        ]
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "*": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "copdem",
+            "prefix": "dem",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "shorewall_pt_out": {
+            "source": "copy",
+            "product": "copy",
+            "content": "basin-mouths-prel",
+            "layerid": "shorewall-pt",
+            "prefix": "shorewall-pt",
+            "suffix": "v01-pfpf-hydrdem4+4-90m",
+            "ext": ".shp"
+          }
+        },
+        {
+          "allOutletsfpn_s2": {
+            "source": "copy",
+            "product": "copy",
+            "content": "basin-mouths-prel",
+            "layerid": "outlets-pt",
+            "prefix": "outlets-pt",
+            "suffix": "v01-pfpf-hydrdem4+4-90m",
+            "ext": ".shp"
+          }
+        }
+      ]
+    }
+  ]
+}

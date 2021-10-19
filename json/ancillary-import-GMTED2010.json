@@ -1,0 +1,104 @@
+{
+  "postgresdb": {
+    "db": "geoimagine"
+  },
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "OrganizeAncillary",
+      "parameters": {
+        "importcode": "AIG",
+        "epsg": "4326",
+        "orgid": "GMTED2010",
+        "dsname": "GMTED2010",
+        "dsversion": "1.0",
+        "accessdate": "20210317",
+        "regionid": "global",
+        "regioncat": "global",
+        "dataurl": "",
+        "metaurl": "",
+        "title": "GMTED2010 elevation",
+        "label": "GMTED2010 elevation",
+        "copyright": "unknown",
+        "replacestr": "",
+        "replacetag": ""
+      },
+      "srcpath": {
+        "volume": "WORK",
+        "hdr": "",
+        "dat": ""
+      },
+      "dstpath": {
+        "volume": "WORK",
+        "hdr": "vrt",
+        "dat": ""
+      },
+      "srcraw": [
+        {
+          "mn75_grd": {
+            "datadir": "RAWAUXILIARY/GMTED2010/mn75_grd",
+            "datafile": "mn75_grd",
+            "datalayer": "mn75_grd",
+            "title": "Global DEM",
+            "label": "Global DEM 7.5 min.",
+            "cellnull": 0
+          },
+          "md75_grd": {
+            "datadir": "RAWAUXILIARY/GMTED2010/md75_grd",
+            "datafile": "md75_grd",
+            "datalayer": "md75_grd",
+            "title": "Global median DEM",
+            "label": "Global median DEM 7.5 min.",
+            "cellnull": 0
+          }
+        }
+      ],
+      "dstcomp": [
+        {
+          "mn75_grd": {
+            "masked": "Y",
+            "measure": "R",
+            "source": "GMTED2010",
+            "product": "GMTED2010",
+            "content": "DEM",
+            "layerid": "DEM-mn75",
+            "prefix": "DEM-mn75",
+            "suffix": "0",
+            "scalefac": "1",
+            "offsetadd": "0",
+            "dataunit": "m",
+            "celltype": "Int16",
+            "cellnull": "-32768"
+          }
+        },
+        {
+          "md75_grd": {
+            "masked": "Y",
+            "measure": "R",
+            "source": "GMTED2010",
+            "product": "GMTED2010",
+            "content": "DEM",
+            "layerid": "DEM-md75",
+            "prefix": "DEM-md75",
+            "suffix": "0",
+            "scalefac": "1",
+            "offsetadd": "0",
+            "dataunit": "m",
+            "celltype": "Int16",
+            "cellnull": "-32768"
+          }
+        }
+      ]
+    }
+  ]
+}

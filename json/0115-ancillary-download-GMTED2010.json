@@ -1,0 +1,30 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "DownloadAncillary",
+      "overwrite": false,
+      "parameters": {
+        "downloadcode": "filelist",
+        "path": "GMTED2010/GMTED2010_tilelist.txt",
+        "datadir": "RAWAUXILIARY/GMTED2010"
+      },
+      "srcpath": {
+        "volume": "karttur"
+      },
+      "dstpath": {
+        "volume": "karttur"
+      }
+    }
+  ]
+}

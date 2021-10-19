@@ -1,0 +1,30 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "system"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "ManageDefRegProj",
+      "overwrite": false,
+      "parameters": {
+        "defaultregion": "se-m",
+        "tractid": "karttur-swedendmarine",
+        "tractname": "karttur Sweden marine",
+        "projid": "karttur-swedendmarine",
+        "projname": "karttur Sweden marine",
+        "tracttitle": "karttur Sweden marine",
+        "tractlabel": "karttur Sweden marine",
+        "projtitle": "karttur Sweden marine",
+        "projlabel": "karttur Sweden marine"
+      }
+    }
+  ]
+}

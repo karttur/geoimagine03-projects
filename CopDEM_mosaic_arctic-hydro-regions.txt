@@ -1,0 +1,13 @@
+###########################
+###    mosaic tiles    ###
+###########################
+/Users/thomasgumbricht/eclipse-workspace/2020-03_geoimagine/karttur_v202003/geoimagine/projects/doc/CopernicusDEM/json/0313_CopDEM_mosaic-nordichydro_ease2n.json
+/Users/thomasgumbricht/eclipse-workspace/2020-03_geoimagine/karttur_v202003/geoimagine/projects/doc/CopernicusDEM/json/0313_CopDEM_mosaic-greenlandhydro_ease2n.json
+/Users/thomasgumbricht/eclipse-workspace/2020-03_geoimagine/karttur_v202003/geoimagine/projects/doc/CopernicusDEM/json/0313_CopDEM_mosaic-cahydro_ease2n.json
+/Users/thomasgumbricht/eclipse-workspace/2020-03_geoimagine/karttur_v202003/geoimagine/projects/doc/CopernicusDEM/json/0313_CopDEM_mosaic-alaskahydro_ease2n.json
+/Users/thomasgumbricht/eclipse-workspace/2020-03_geoimagine/karttur_v202003/geoimagine/projects/doc/CopernicusDEM/json/0313_CopDEM_mosaic-kolymahydro_ease2n.json
+/Users/thomasgumbricht/eclipse-workspace/2020-03_geoimagine/karttur_v202003/geoimagine/projects/doc/CopernicusDEM/json/0313_CopDEM_mosaic-lenahydro_ease2n.json
+/Users/thomasgumbricht/eclipse-workspace/2020-03_geoimagine/karttur_v202003/geoimagine/projects/doc/CopernicusDEM/json/0313_CopDEM_mosaic-yieniseyhydro_ease2n.json
+/Users/thomasgumbricht/eclipse-workspace/2020-03_geoimagine/karttur_v202003/geoimagine/projects/doc/CopernicusDEM/json/0313_CopDEM_mosaic-obhydro_ease2n.json
+/Users/thomasgumbricht/eclipse-workspace/2020-03_geoimagine/karttur_v202003/geoimagine/projects/doc/CopernicusDEM/json/0313_CopDEM_mosaic-dvinahydro_ease2n.json
+/Users/thomasgumbricht/eclipse-workspace/2020-03_geoimagine/karttur_v202003/geoimagine/projects/doc/CopernicusDEM/json/0313_CopDEM_mosaic-arcticoceanhydro_ease2n.json

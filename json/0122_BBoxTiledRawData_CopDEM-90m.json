@@ -1,0 +1,33 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "BBoxTiledRawData",
+      "dsversion": "1.3",
+      "parameters": {
+        "getlist": "copernicus90_tilelist.txt",
+        "pattern": "DEM",
+        "srcpath": "/Volumes/Arctic2021/RAWAUXILIARY/CopernicusDem90/DEM",
+        "dstpath": "RAWAUXILIARY/CopernicusDem90/DEM"
+      },
+      "srcpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "shp"
+      }
+    }
+  ]
+}

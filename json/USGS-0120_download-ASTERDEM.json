@@ -1,0 +1,39 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "system"
+  },
+  "period": {
+    "startyear": 2000,
+    "endyear": 2000,
+    "startmonth": 3,
+    "endmonth": 3,
+    "startday": 1,
+    "endday": 1,
+    "timestep": "singledate"
+  },
+  "process": [
+    {
+      "processid": "DownloadUSGS",
+      "dsversion": "1.3",
+      "parameters": {
+        "remoteuser": "Gumbricht",
+        "password": "eBw-u89-r33-nfC",
+        "product": "ASTGTM",
+        "version": "003",
+        "doneserach": true,
+        "serverurl": "https://e4ftl01.cr.usgs.gov"
+      },
+      "srcpath": {
+        "volume": "Ancillary"
+      },
+      "dstpath": {
+        "volume": "Ancillary"
+      }
+    }
+  ]
+}

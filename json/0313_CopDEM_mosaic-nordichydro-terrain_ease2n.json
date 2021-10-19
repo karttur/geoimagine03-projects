@@ -1,0 +1,88 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-nordichydro_ease2n",
+    "tractid": "karttur-nordichydro_ease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "MosaicTiles",
+      "version": "1.3",
+      "overwrite": false,
+      "parameters": {
+        "resample": "near",
+        "asscript": false,
+        "fillnodata": false,
+        "fillmaxdist": 0,
+        "fillsmooth": 0
+      },
+      "srcpath": {
+        "volume": "Ancillary"
+      },
+      "dstpath": {
+        "volume": "Ancillary"
+      },
+      "srccomp": [
+        {
+          "flowdir": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "mfd-flowdir",
+            "prefix": "mfd-flowdir",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "mfd-updrain": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "mfd-updrain",
+            "prefix": "mfd-updrain",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "sfd-updrain": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "sfd-updrain",
+            "prefix": "sfd-updrain",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "flowdir": {
+            "layerid": "mfd-flowdir",
+            "prefix": "mfd-flowdir",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "mfd-updrain": {
+            "layerid": "mfd-updrain",
+            "prefix": "mfd-updrain",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "sfd-updrain": {
+            "layerid": "sfd-updrain",
+            "prefix": "sfd-updrain",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ]
+    }
+  ]
+}

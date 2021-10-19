@@ -1,0 +1,44 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-arcticdemext",
+    "tractid": "karttur-arcticdemext",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "MosaicAncillary",
+      "overwrite": false,
+      "parameters": {
+        "mosaiccode": "subdirfiles",
+        "datadir": "DATARAW/panarcticDEM",
+        "datafile": "panarcticDEM_mosaic"
+      },
+      "srcpath": {
+        "volume": "MODIS56",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "MODIS56",
+        "hdr": "vrt"
+      },
+      "dstcomp": [
+        {
+          "dem90": {
+            "source": "ESA-DUE",
+            "product": "panarcticdem",
+            "content": "dem",
+            "layerid": "panarcticdem90",
+            "prefix": "dem90",
+            "suffix": "v01"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "postgresdb": {
+    "db": "geoimagine"
+  },
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "startyear": 2003,
+    "startmonth": 1,
+    "endyear": 2016,
+    "endmonth": 12,
+    "timestep": "M"
+  },
+  "process": [
+    {
+      "processid": "ResampleTimeSeries",
+      "overwrite": true,
+      "parameters": {
+        "method": "avg",
+        "targettimestep": "A"
+      },
+      "srcpath": {
+        "volume": "africa",
+        "hdrfiletype": "tif",
+        "datfiletype": "tif"
+      },
+      "dstpath": {
+        "volume": "africa",
+        "hdrfiletype": "tif",
+        "datfiletype": "tif"
+      },
+      "srccomp": [
+        {
+          "grace-ave": {
+            "source": "NASA-GRACE",
+            "product": "cmwater",
+            "folder": "cmwater",
+            "band": "grace-ave",
+            "prefix": "grace-ave",
+            "suffix": "RL05-f",
+            "timestep": "M"
+          }
+        }
+      ],
+      "dstcomp": [
+        {
+          "grace-ave": {
+            "band": "grace-ave",
+            "suffix": "RL05-f-A",
+            "dataunit": "mm",
+            "timestep": "A"
+          }
+        }
+      ]
+    }
+  ]
+}

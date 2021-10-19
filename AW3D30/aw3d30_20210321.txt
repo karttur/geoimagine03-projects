@@ -1,0 +1,18 @@
+###################################
+###################################
+###           AW3D30            ###
+###################################
+###################################
+
+# Mosain Raw AW3D30(before import)
+# Note that the dataset comes with a vrt mosaic
+## json/0118-AW3D30-mosaic-raw.json
+
+# Import AW3D30
+## json/0160-import-AW3D30.json
+
+# Tile AW3D30 to NorthlandEASE-grid
+json/0200_tile_AW3D30_nortlandease2n.json
+
+# Mosaic AW3D30 nordichydro
+## json/0200_mosai

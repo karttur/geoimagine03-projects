@@ -1,0 +1,152 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "system"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+
+    {
+      "processid": "ManageDefRegProj",
+      "overwrite": false,
+      "parameters": {
+        "defaultregion": "northlandease2n",
+        "tractid": "karttur-northlandease2n",
+        "tractname": "karttur northlandease2n",
+        "projid": "karttur-northlandease2n",
+        "projname": "karttur northlandease2n",
+        "tracttitle": "Karttur northlandease2n",
+        "tractlabel": "Karttur northlandease2n",
+        "projtitle": "Karttur northlandease2n",
+        "projlabel": "Karttur northlandease2n"
+      }
+    },
+
+    {
+      "processid": "ManageDefRegProj",
+      "overwrite": false,
+      "parameters": {
+        "defaultregion": "arcticland",
+        "tractid": "karttur-arcticland",
+        "tractname": "karttur arcticland",
+        "projid": "karttur-arcticland",
+        "projname": "karttur arcticland",
+        "tracttitle": "Karttur arcticland",
+        "tractlabel": "Karttur arcticland",
+        "projtitle": "Karttur arcticland",
+        "projlabel": "Karttur arcticland"
+      }
+    },
+    {
+      "processid": "ManageDefRegProj",
+      "overwrite": false,
+      "parameters": {
+        "defaultregion": "arcticdem",
+        "tractid": "karttur-arcticdem",
+        "tractname": "karttur arcticdem",
+        "projid": "karttur-arcticdem",
+        "projname": "karttur arcticdem",
+        "tracttitle": "Karttur arcticdem",
+        "tractlabel": "Karttur arcticdem",
+        "projtitle": "Karttur arcticdem",
+        "projlabel": "Karttur arcticdem"
+      }
+    },
+    {
+      "processid": "ManageDefRegProj",
+      "overwrite": false,
+      "parameters": {
+        "defaultregion": "arcticdemext",
+        "tractid": "karttur-arcticdemext",
+        "tractname": "karttur arcticdemext",
+        "projid": "karttur-arcticdemext",
+        "projname": "karttur arcticdemext",
+        "tracttitle": "Karttur arcticdemext",
+        "tractlabel": "Karttur arcticdemext",
+        "projtitle": "Karttur arcticdemext",
+        "projlabel": "Karttur arcticdemext"
+      }
+    },
+    {
+      "processid": "ManageDefRegProj",
+      "overwrite": true,
+      "parameters": {
+        "defaultregion": "nhemispherease2n",
+        "tractid": "karttur-nhemispherease2n",
+        "tractname": "karttur Northern Hemisphere",
+        "projid": "karttur-nhemispherease2n",
+        "projname": "karttur Northern Hemisphere",
+        "tracttitle": "karttur Northern Hemisphere",
+        "tractlabel": "karttur Northern Hemisphere",
+        "projtitle": "karttur Northern Hemisphere",
+        "projlabel": "karttur Northern Hemisphere"
+      }
+    },
+    {
+      "processid": "ManageDefRegProj",
+      "overwrite": false,
+      "parameters": {
+        "defaultregion": "arcticdemease2n",
+        "tractid": "karttur-arcticdemease2n",
+        "tractname": "karttur arcticdemease2n",
+        "projid": "karttur-arcticdemease2n",
+        "projname": "karttur arcticdemease2n",
+        "tracttitle": "Karttur arcticdemease2n",
+        "tractlabel": "Karttur arcticdemease2n",
+        "projtitle": "Karttur arcticdemease2n",
+        "projlabel": "Karttur arcticdemease2n"
+      }
+    },
+    {
+      "processid": "ManageDefRegProj",
+      "overwrite": false,
+      "parameters": {
+        "defaultregion": "nordichydroease2n",
+        "tractid": "karttur-nordichydro",
+        "tractname": "karttur Nordic Hydrology",
+        "projid": "karttur-nordichydro",
+        "projname": "Karttur Nordic Hydrology",
+        "tracttitle": "Karttur Nordic Hydrology",
+        "tractlabel": "Karttur Nordic Hydrology",
+        "projtitle": "Karttur Nordic Hydrology",
+        "projlabel": "Karttur Nordic Hydrology"
+      }
+    },
+    {
+      "processid": "ManageDefRegProj",
+      "overwrite": false,
+      "parameters": {
+        "defaultregion": "greenlandhydroease2n",
+        "tractid": "karttur-greenlandhydro",
+        "tractname": "karttur greenland Hydrology",
+        "projid": "karttur-greenlandhydro",
+        "projname": "Karttur Greenland Hydrology",
+        "tracttitle": "Karttur Greenland Hydrology",
+        "tractlabel": "Karttur Greenland Hydrology",
+        "projtitle": "Karttur Greenland Hydrology",
+        "projlabel": "Karttur Greenland Hydrology"
+      }
+    },
+    {
+      "processid": "ManageDefRegProj",
+      "overwrite": false,
+      "parameters": {
+        "defaultregion": "canadahydroease2n",
+        "tractid": "karttur-canadahydro",
+        "tractname": "karttur Canada Acrctic Hydrology",
+        "projid": "karttur-canadahydro",
+        "projname": "Karttur Canada Acrctic Hydrology",
+        "tracttitle": "Karttur Canada Acrctic Hydrology",
+        "tractlabel": "Karttur Canada Acrctic Hydrology",
+        "projtitle": "Karttur Canada Acrctic Hydrology",
+        "projlabel": "Karttur Canada Acrctic Hydrology"
+      }
+    }
+  ]
+}

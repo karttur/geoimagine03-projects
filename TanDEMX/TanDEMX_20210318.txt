@@ -1,0 +1,23 @@
+###################################
+###################################
+###          TanDEM-Z           ###
+###################################
+###################################
+
+# Search TanDEM-X
+# json/tandemX-0100_search-download-tandemx90.json
+
+# UnZip TanDEM-X
+# json/tandemX-0120_unzip-tandemx90.json
+
+# Mosain Raw TanDEM-X (before import)
+# json/0118-tandemx-mosaic-rawjson.json
+
+# Import TanDEM-X
+# json/0160-ancillary-import-TanDEMX90.json
+
+# Tile TanDEM-X to Northern Hemisphere EASE-grid
+#json/0200_tile_tandemX902ease2n.json
+
+# Mosaic tandemx nordichydro
+json/0210_mosaic_nordichydro-tandemx90.json

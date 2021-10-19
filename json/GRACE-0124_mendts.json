@@ -1,0 +1,136 @@
+{
+  "postgresdb": {
+    "db": "geoimagine"
+  },
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "startyear": 2002,
+    "startmonth": 4,
+    "endyear": 2017,
+    "endmonth": 5,
+    "timestep": "M"
+  },
+  "process": [
+    {
+      "processid": "TimeSeriesImageMend",
+      "overwrite": true,
+      "parameters": {
+        "method": "interpolate"
+      },
+      "srcpath": {
+        "volume": "karttur",
+        "hdr": "tif",
+        "dat": "tif"
+      },
+      "dstpath": {
+        "volume": "karttur",
+        "hdr": "tif",
+        "dat": "tif"
+      },
+      "srccomp": [
+        {
+          "grace-csr": {
+            "source": "nasa-grace",
+            "product": "grace-csr",
+            "content": "land-mass",
+            "layerid": "cm-water",
+            "prefix": "cm-water",
+            "suffix": "RL06-v03"
+          }
+        }
+      ],
+      "dstcomp": [
+        {
+          "grace-csr": {
+            "layerid": "grace-csr",
+            "prefix": "cm-water",
+            "suffix": "RL06-v03-filled"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "TimeSeriesImageMend",
+      "overwrite": true,
+      "parameters": {
+        "method": "interpolate"
+      },
+      "srcpath": {
+        "volume": "karttur",
+        "hdr": "tif",
+        "dat": "tif"
+      },
+      "dstpath": {
+        "volume": "karttur",
+        "hdr": "tif",
+        "dat": "tif"
+      },
+      "srccomp": [
+        {
+          "grace-gfz": {
+            "source": "nasa-grace",
+            "product": "grace-gfz",
+            "content": "land-mass",
+            "layerid": "cm-water",
+            "prefix": "cm-water",
+            "suffix": "RL06-v03"
+          }
+        }
+      ],
+      "dstcomp": [
+        {
+          "grace-gfz": {
+            "layerid": "grace-gfz",
+            "prefix": "cm-water",
+            "suffix": "RL06-v03-filled"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "TimeSeriesImageMend",
+      "overwrite": true,
+      "parameters": {
+        "method": "interpolate"
+      },
+      "srcpath": {
+        "volume": "karttur",
+        "hdr": "tif",
+        "dat": "tif"
+      },
+      "dstpath": {
+        "volume": "karttur",
+        "hdr": "tif",
+        "dat": "tif"
+      },
+      "srccomp": [
+        {
+          "grace-jpl": {
+            "source": "nasa-grace",
+            "product": "grace-jpl",
+            "content": "land-mass",
+            "layerid": "cm-water",
+            "prefix": "cm-water",
+            "suffix": "RL06-v03"
+          }
+        }
+      ],
+      "dstcomp": [
+        {
+          "grace-jpl": {
+            "layerid": "grace-jpl",
+            "prefix": "cm-water",
+            "suffix": "RL06-v03-filled"
+          }
+        }
+      ]
+    }
+  ]
+}

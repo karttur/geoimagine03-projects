@@ -1,0 +1,30 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-arcticdemext",
+    "tractid": "karttur-arcticdemext",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "DownloadAncillary",
+      "overwrite": false,
+      "parameters": {
+        "downloadcode": "filelist",
+        "path": "DOWNLOADS/Metria/VMI/Metria-Svenska_VMI.txt",
+        "datadir": "RAWAUXILIARY/Metria/VMI"
+      },
+      "srcpath": {
+        "volume": "karttur"
+      },
+      "dstpath": {
+        "volume": "karttur"
+      }
+    }
+  ]
+}

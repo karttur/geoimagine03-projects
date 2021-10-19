@@ -1,0 +1,567 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-northlandease2n",
+    "tractid": "karttur-northlandease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": false,
+      "parameters": {
+        "palette": "ruslesfactor",
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": "RUSLE S factor (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "rusle-slopesteepness": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "rusle-slopesteepness",
+            "prefix": "rusle-slopesteepness",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "rusle-slopesteepness": {
+            "layerid": "rusle-slopesteepness",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": false,
+      "parameters": {
+        "palette": "ruslelfactor",
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": "RUSLE L factor (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "rusle-slopelength": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "rusle-slopelength",
+            "prefix": "rusle-slopelength",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "rusle-slopelength": {
+            "layerid": "rusle-slopelength",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": false,
+      "parameters": {
+        "palette": "tci",
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": "Topgraphic Convergence Index (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "tci": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "tci",
+            "prefix": "tci",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tci": {
+            "layerid": "tci",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": false,
+      "parameters": {
+        "palette": "spi",
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": "stream power index (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "psi": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "psi",
+            "prefix": "psi",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "psi": {
+            "layerid": "psi",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": false,
+      "parameters": {
+        "palette": "updrain",
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": " SFD Updrain area (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "sfd-updrain": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "sfd-updrain",
+            "prefix": "sfd-updrain",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "sfd-updrain": {
+            "layerid": "sfd-updrain",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": false,
+      "parameters": {
+        "palette": "updrain",
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": "MFD Updrain area (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "mfd-updrain": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "mfd-updrain",
+            "prefix": "mfd-updrain",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "mfd-updrain": {
+            "layerid": "mfd-updrain",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": false,
+      "parameters": {
+        "palette": "far-divide-dist",
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": "Furthest divide proximity (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "far-divide-dist": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "far-divide-dist",
+            "prefix": "far-divide-dist",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "far-divide-dist": {
+            "layerid": "far-divide-dist",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": false,
+      "parameters": {
+        "palette": "near-divide-dist",
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": "Nearest divide proximity (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "near-divide-dist": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "near-divide-dist",
+            "prefix": "near-divide-dist",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "near-divide-dist": {
+            "layerid": "near-divide-dist",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": false,
+      "parameters": {
+        "palette": "streamproximity",
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": "Stream proximity (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "stream-dist": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "stream-dist",
+            "prefix": "stream-dist",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "stream-dist": {
+            "layerid": "stream-dist",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": false,
+      "parameters": {
+        "palette": "dividehead",
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": "Furthest divide head (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "far-divide-head": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "far-divide-head",
+            "prefix": "far-divide-head",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "far-divide-head": {
+            "layerid": "far-divide-head",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": false,
+      "parameters": {
+        "palette": "dividehead",
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": "Nearest divide head (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "near-divide-head": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "near-divide-head",
+            "prefix": "near-divide-head",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "near-divide-head": {
+            "layerid": "near-divide-head",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": false,
+      "parameters": {
+        "palette": "hydraulhead",
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": "Hydraulic head (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "hydraulhead": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "hydraulhead",
+            "prefix": "hydraulhead",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "hydraulhead": {
+            "layerid": "hydraulhead",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        }
+      ]
+    }
+  ]
+}

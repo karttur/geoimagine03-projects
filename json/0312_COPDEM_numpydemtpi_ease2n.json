@@ -1,0 +1,55 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-northlandease2n",
+    "tractid": "karttur-northlandease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "NumpyDemTiles",
+      "version": "1.3",
+      "overwrite": false,
+      "parameters": {
+        "mode": "landformTPI",
+        "mosaic": true,
+        "radiuscsv": "1,3"
+      },
+      "srcpath": {
+        "volume": "karttur",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "karttur",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "copdem90": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "copdem",
+            "prefix": "dem",
+            "suffix": "v01-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "copdem90": {
+            "layerid": "auto",
+            "prefix": "auto",
+            "suffix": "auto",
+            "dataunit": "auto"
+          }
+        }
+      ]
+    }
+  ]
+}

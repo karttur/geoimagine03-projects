@@ -1,0 +1,71 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-arcticdemext",
+    "tractid": "karttur-arcticdemext",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "OrganizeAncillary",
+      "overwrite": false,
+      "parameters": {
+        "importcode": "vrt",
+        "epsg": "4326",
+        "orgid": "ESA-DUE",
+        "dsname": "panarctiddem",
+        "dsversion": "1.0",
+        "accessdate": "20210311",
+        "regionid": "arcticdemext",
+        "regioncat": "global",
+        "dataurl": "https://doi.pangaea.de/10.1594/PANGAEA.779748",
+        "metaurl": "https://doi.pangaea.de/10.1594/PANGAEA.779748",
+        "title": "PanArctic DEM",
+        "label": "PanArctice Digitial Surface Model"
+      },
+      "srcpath": {
+        "volume": "MODIS56",
+        "hdr": "vrt"
+      },
+      "dstpath": {
+        "volume": "MODIS56",
+        "hdr": "vrt"
+      },
+      "srcraw": [
+        {
+          "dem90": {
+            "datadir": "/Volumes/MODIS56/ancillary/ESA-DUE/region/dem/arcticdemext/0",
+            "datafile": "dem90_panarcticdem_arcticdemext_0_v01-full",
+            "datalayer": "DEM",
+            "title": "PanArctic DEM",
+            "label": "PanArctice Digitial Surface Modeln"
+          }
+        }
+      ],
+      "dstcomp": [
+        {
+          "dem90": {
+            "source": "ESA-DUE",
+            "product": "panarcticdem",
+            "content": "dem",
+            "layerid": "panarcticdem90",
+            "prefix": "dem90",
+            "suffix": "v01",
+            "scalefac": 1,
+            "offsetadd": 0,
+            "dataunit": "masl",
+            "celltype": "Int16",
+            "cellnull": -32768,
+            "measure": "R",
+            "masked": "N"
+          }
+        }
+      ]
+    }
+  ]
+}

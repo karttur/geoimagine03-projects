@@ -1,0 +1,71 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "OrganizeAncillary",
+      "overwrite": false,
+      "parameters": {
+        "importcode": "vrt",
+        "epsg": "4326",
+        "orgid": "DLR",
+        "dsname": "tandemx",
+        "dsversion": "1.0",
+        "accessdate": "20210320",
+        "regionid": "global",
+        "regioncat": "global",
+        "dataurl": "https://geoservice.dlr.de/web/dataguide/tdm90/",
+        "metaurl": "https://geoservice.dlr.de/web/dataguide/tdm90/",
+        "title": "TanDEM-X DEM",
+        "label": "TanDEM-X DEM Digitial Surface Model"
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "vrt"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "vrt"
+      },
+      "srcraw": [
+        {
+          "tandemx": {
+            "datadir": "/Volumes/Ancillary/ancillary/DLR/region/dem/global/0",
+            "datafile": "dem90_tandemx_global_0_v01-full",
+            "datalayer": "DEM",
+            "title": "TanDEM-X global 90 m",
+            "label": "TanDEM-X global 90 m"
+          }
+        }
+      ],
+      "dstcomp": [
+        {
+          "tandemx": {
+            "source": "DLR",
+            "product": "tandemx",
+            "content": "dem",
+            "layerid": "tandemx90",
+            "prefix": "dem90",
+            "suffix": "v01",
+            "scalefac": 1,
+            "offsetadd": 0,
+            "dataunit": "masl",
+            "celltype": "Float32",
+            "cellnull": -32767,
+            "measure": "R",
+            "masked": "N"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+###################################
+###################################
+###           USGS            ###
+###################################
+###################################
+
+###################################
+###     Search and download     ###
+###################################
+
+## Search data pool for USGS products ##
+## OK ## json/USGS-0100_search-ASTERDEM.json
+
+## Download the USGS data
+json/USGS-0120_download-ASTERDEM.json
+
+## Check the db for downloaded single tile position ##
+## MODIS-0129_checksingletile.xml
+
+###################################
+###           Extract           ###
+###################################
+
+## Explode single tile position ##
+## MODIS-0130_explodsingletile.xml

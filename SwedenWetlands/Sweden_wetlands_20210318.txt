@@ -1,0 +1,31 @@
+###################################
+###################################
+###      Sweden wetlands        ###
+###################################
+###################################
+
+###################################
+###          Download           ###
+###################################
+
+## Download SMHI data ##
+## OK ## json/0115-download-SMHI-SVAR.json
+
+## Download Metria data ##
+## OK ## json/0115-download-Metria-markdata.json
+
+## Download Metria Svenska Vaatmarksinventeringen (VMI) ##
+## OK ## json/0115-download-Metria-VMI.json
+
+###################################
+###          Organize           ###
+###################################
+
+## Organize SMHI data ##
+## OK ## json/0160-organize-SMHI-SVAR.json
+
+###################################
+###  Reproject to EASE-grid N   ###
+###################################
+
+json/0190-reproject-SMHI-SVAR.json

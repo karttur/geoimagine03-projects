@@ -1,0 +1,222 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-northlandease2n",
+    "tractid": "karttur-northlandease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "GdalDemTiles",
+      "version": "1.3",
+      "overwrite": false,
+      "parameters": {
+        "mode": "hillshade",
+        "mosaic": true,
+        "palette": "",
+        "radiuscsv": "1",
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "copdem90": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "copdem",
+            "prefix": "dem",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "copdem90": {
+            "layerid": "auto",
+            "prefix": "auto",
+            "suffix": "auto",
+            "dataunit": "auto"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "GdalDemTiles",
+      "version": "1.3",
+      "overwrite": false,
+      "parameters": {
+        "mode": "TPI",
+        "mosaic": true,
+        "radiuscsv": "1,3",
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "copdem90": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "copdem",
+            "prefix": "dem",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "copdem90": {
+            "layerid": "auto",
+            "prefix": "auto",
+            "suffix": "auto",
+            "dataunit": "auto"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "GdalDemTiles",
+      "version": "1.3",
+      "overwrite": false,
+      "parameters": {
+        "mode": "TRI",
+        "algorithm": "Riley",
+        "mosaic": true,
+        "radiuscsv": "1,3",
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "copdem90": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "copdem",
+            "prefix": "dem",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "copdem90": {
+            "layerid": "auto",
+            "prefix": "auto",
+            "suffix": "auto",
+            "dataunit": "auto"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "GdalDemTiles",
+      "version": "1.3",
+      "overwrite": false,
+      "parameters": {
+        "mode": "slope",
+        "mosaic": true,
+        "radiuscsv": "1,3",
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "copdem90": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "copdem",
+            "prefix": "dem",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "copdem90": {
+            "layerid": "auto",
+            "prefix": "auto",
+            "suffix": "auto",
+            "dataunit": "auto"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "GdalDemTiles",
+      "version": "1.3",
+      "overwrite": false,
+      "parameters": {
+        "mode": "aspect",
+        "mosaic": true,
+        "radiuscsv": "1",
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "copdem90": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "copdem",
+            "prefix": "dem",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "copdem90": {
+            "layerid": "auto",
+            "prefix": "auto",
+            "suffix": "auto",
+            "dataunit": "auto"
+          }
+        }
+      ]
+    }
+  ]
+}

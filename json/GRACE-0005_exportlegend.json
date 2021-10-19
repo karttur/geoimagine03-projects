@@ -1,0 +1,33 @@
+{
+  "postgresdb": {
+    "db": "geoimagine"
+  },
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "system"
+  },
+  "process": {
+    "processid": "ExportLegend",
+    "overwrite": true,
+    "parameters": {
+      "palette": "grace"
+    },
+    "dstpath": {
+      "volume": "/Users/thomasgumbricht"
+    },
+    "comp": [
+      {
+        "id": "1",
+        "source": "NASA-GRACE",
+        "product": "ave-cmwater",
+        "content": "cmwater-A-stats",
+        "layerid": "avg-grace-ave",
+        "suffix": "RL05-f-A"
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-swedendmarine",
+    "tractid": "karttur-swedendmarine",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "ReprojectAncillaryRegion",
+      "version": "1.3",
+      "overwrite": false,
+      "parameters": {
+        "defregid": "se-m",
+        "asscript": false
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "shp"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "shp"
+      },
+      "srccomp": [
+        {
+          "haro": {
+            "source": "SMHI",
+            "product": "SVAR",
+            "content": "mainbasins",
+            "layerid": "haro",
+            "prefix": "haro",
+            "suffix": "2016"
+          }
+        },
+        {
+          "aro": {
+            "source": "SMHI",
+            "product": "SVAR",
+            "content": "subbasins",
+            "layerid": "aro",
+            "prefix": "aro",
+            "suffix": "2016"
+          }
+        },
+        {
+          "vd": {
+            "source": "SMHI",
+            "product": "SVAR",
+            "content": "waterlines",
+            "layerid": "channels",
+            "prefix": "channels",
+            "suffix": "2016"
+          }
+        },
+        {
+          "vy": {
+            "source": "SMHI",
+            "product": "SVAR",
+            "content": "waterareas",
+            "layerid": "lakes",
+            "prefix": "lakes",
+            "suffix": "2016"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "haro": {
+            "srccomp": "mainbasins_haro",
+            "layerid": "haro"
+          }
+        },
+        {
+          "aro": {
+            "srccomp": "subbasins_aro",
+            "layerid": "aro"
+          }
+        },
+        {
+          "vd": {
+            "srccomp": "waterlines_channels",
+            "layerid": "channels"
+          }
+        },
+        {
+          "vy": {
+            "srccomp": "waterareas_lakes",
+            "layerid": "lakes"
+          }
+        }
+      ]
+    }
+  ]
+}

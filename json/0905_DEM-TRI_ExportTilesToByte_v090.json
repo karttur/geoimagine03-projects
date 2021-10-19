@@ -1,0 +1,78 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-northlandease2n",
+    "tractid": "karttur-northlandease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": false,
+      "parameters": {
+        "palette": "tri",
+        "zscore": true,
+        "minmax": true,
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": "TRI zscore (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "tri3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tri",
+            "prefix": "tri",
+            "suffix": "v01-90m-3x3"
+          }
+        },
+        {
+          "tri9": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tri",
+            "prefix": "tri",
+            "suffix": "v01-90m-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tri3": {
+            "layerid": "tri",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        },
+        {
+          "tri9": {
+            "layerid": "tri",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        }
+      ]
+    }
+  ]
+}

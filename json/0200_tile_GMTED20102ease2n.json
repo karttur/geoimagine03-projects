@@ -1,0 +1,55 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-arcticdemease2n",
+    "tractid": "karttur-arcticdemease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "TileAncillaryRegion",
+      "version": "1.3",
+      "overwrite": false,
+      "parameters": {
+        "defregid": "global",
+        "tr_xres": 250,
+        "tr_yres": 250,
+        "resample": "near",
+        "asscript": false
+      },
+      "srcpath": {
+        "volume": "WORK",
+        "hdr": "vrt"
+      },
+      "dstpath": {
+        "volume": "WORK",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "dem250": {
+            "source": "GMTED2010",
+            "product": "GMTED2010",
+            "content": "DEM",
+            "layerid": "DEM-md75",
+            "prefix": "DEM-md75",
+            "suffix": "0"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "dem250": {
+            "srccomp": "dem_dem-md75",
+            "layerid": "DEM-md75"
+          }
+        }
+      ]
+    }
+  ]
+}

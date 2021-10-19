@@ -1,0 +1,53 @@
+{
+  "postgresdb": {
+    "db": "geoimagine"
+  },
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "startyear": 2003,
+    "startmonth": 1,
+    "endyear": 2016,
+    "endmonth": 12,
+    "timestep": "MS"
+  },
+  "process": [
+    {
+      "processid": "ExtractSeason",
+      "version": "1.3",
+      "overwrite": "True",
+      "parameters": {
+        "trend": "kernel",
+        "kernel": "0.012,0.191,0.492,1.0,0.492,0.191,0.012"
+      },
+      "srcpath": {
+        "volume": "karttur3tb",
+        "hdr": "tif",
+        "dat": "tif"
+      },
+      "dstpath": {
+        "volume": "karttur3tb",
+        "hdr": "tif",
+        "dat": "tif"
+      },
+      "srccomp": [
+        {
+          "grace-ave": {
+            "source": "NASA-GRACE",
+            "product": "ave-cmwater",
+            "content": "cmwater",
+            "layerid": "grace-ave",
+            "prefix": "grace-ave",
+            "suffix": "RL05-filled"
+          }
+        }
+      ]
+    }
+  ]
+}

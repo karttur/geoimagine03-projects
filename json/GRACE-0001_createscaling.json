@@ -1,0 +1,307 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "system"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "CreateScaling",
+      "overwrite": true,
+      "parameters": {
+        "mirror0": true,
+        "scalefac": 5,
+        "power": 0.67
+      },
+      "comp": [
+        {
+          "1": {
+            "source": "NASA-GRACE",
+            "product": "ave-cmwater",
+            "content": "cmwater-annual-stats-A",
+            "layerid": "avg-grace-ave",
+            "suffix": "RL05-filled"
+          }
+        },
+        {
+          "2": {
+            "source": "NASA-GRACE",
+            "product": "ave-cmwater",
+            "content": "cmwater-annual-stats-A",
+            "layerid": "std-grace-ave",
+            "suffix": "RL05-filled"
+          }
+        },
+        {
+          "3": {
+            "source": "NASA-GRACE",
+            "product": "ave-cmwater",
+            "content": "cmwater-annual-trend-A",
+            "layerid": "ts-ic-grace-ave",
+            "suffix": "RL05-filled"
+          }
+        },
+        {
+          "4": {
+            "source": "NASA-GRACE",
+            "product": "ave-cmwater",
+            "content": "cmwater-annual-trend-A",
+            "layerid": "ols-ic-grace-ave",
+            "suffix": "RL05-filled"
+          }
+        },
+        {
+          "5": {
+            "source": "NASA-GRACE",
+            "product": "cmwater",
+            "content": "cmwater-A-stats",
+            "layerid": "avg-grace-ave",
+            "suffix": "RL05-f-A-1deg"
+          }
+        },
+        {
+          "6": {
+            "source": "NASA-GRACE",
+            "product": "cmwater",
+            "content": "cmwater-A-trend",
+            "layerid": "ols-ic-grace-ave",
+            "suffix": "RL05-f-A-1deg"
+          }
+        },
+        {
+          "7": {
+            "source": "NASA-GRACE",
+            "product": "cmwater",
+            "content": "cmwater-A-trend",
+            "layerid": "ts-ic-grace-ave",
+            "suffix": "RL05-f-A-1deg"
+          }
+        },
+        {
+          "8": {
+            "source": "NASA-GRACE",
+            "product": "cmwater",
+            "content": "cmwater-A-stats",
+            "layerid": "std-grace-ave",
+            "suffix": "RL05-f-A-1deg"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "CreateScaling",
+      "overwrite": true,
+      "parameters": {
+        "scalefac": 20,
+        "offsetadd": 125
+      },
+      "comp": [
+        {
+          "1": {
+            "source": "NASA-GRACE",
+            "product": "ave-cmwater",
+            "content": "cmwater-annual-trend-A",
+            "layerid": "mk-z-grace-ave",
+            "suffix": "RL05-filled"
+          }
+        },
+        {
+          "mk-z-grace-ave": {
+            "source": "NASA-GRACE",
+            "product": "cmwater",
+            "content": "cmwater-A-trend",
+            "layerid": "mk-z-grace-ave",
+            "prefix": "mk-z-grace-ave",
+            "suffix": "RL05-f-A-1deg"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "CreateScaling",
+      "overwrite": true,
+      "parameters": {
+        "mirror0": true,
+        "scalefac": 15,
+        "power": 0.67
+      },
+      "comp": [
+        {
+          "1": {
+            "source": "NASA-GRACE",
+            "product": "ave-cmwater",
+            "content": "cmwater-annual-trend-A",
+            "layerid": "ts-mdsl-grace-ave",
+            "suffix": "RL05-filled"
+          }
+        },
+        {
+          "2": {
+            "source": "NASA-GRACE",
+            "product": "ave-cmwater",
+            "content": "cmwater-annual-trend-A",
+            "layerid": "ts-losl-grace-ave",
+            "suffix": "RL05-filled"
+          }
+        },
+        {
+          "3": {
+            "source": "NASA-GRACE",
+            "product": "ave-cmwater",
+            "content": "cmwater-annual-trend-A",
+            "layerid": "ts-hisl-grace-ave",
+            "suffix": "RL05-filled"
+          }
+        },
+        {
+          "4": {
+            "source": "NASA-GRACE",
+            "product": "ave-cmwater",
+            "content": "cmwater-annual-trend-A",
+            "layerid": "ols-sl-grace-ave",
+            "suffix": "RL05-filled"
+          }
+        },
+        {
+          "5": {
+            "source": "NASA-GRACE",
+            "product": "cmwater",
+            "content": "cmwater-A-trend",
+            "layerid": "ols-sl-grace-ave",
+            "prefix": "ols-sl-grace-ave",
+            "suffix": "RL05-f-A-1deg"
+          }
+        },
+        {
+          "6": {
+            "source": "NASA-GRACE",
+            "product": "cmwater",
+            "content": "cmwater-A-trend",
+            "layerid": "ts-mdsl-grace-ave",
+            "prefix": "ts-mdsl-grace-ave",
+            "suffix": "RL05-f-A-1deg"
+          }
+        },
+        {
+          "7": {
+            "source": "NASA-GRACE",
+            "product": "cmwater",
+            "content": "cmwater-A-trend",
+            "layerid": "ts-losl-grace-ave",
+            "prefix": "ts-losl-grace-ave",
+            "suffix": "RL05-f-A-1deg"
+          }
+        },
+        {
+          "8": {
+            "source": "NASA-GRACE",
+            "product": "cmwater",
+            "content": "cmwater-A-trend",
+            "layerid": "ts-hisl-grace-ave",
+            "prefix": "ts-hisl-grace-ave",
+            "suffix": "RL05-f-A-1deg"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "CreateScaling",
+      "overwrite": true,
+      "parameters": {
+        "mirror0": true,
+        "scalefac": 10
+      },
+      "comp": [
+        {
+          "id": "1",
+          "source": "NASA-GRACE",
+          "product": "ave-cmwater",
+          "content": "cmwater-annual-trend-A",
+          "layerid": "ols-rmse-grace-ave",
+          "suffix": "RL05-filled"
+        },
+        {
+          "id": "ols-rmse-grace-ave",
+          "source": "NASA-GRACE",
+          "product": "cmwater",
+          "content": "cmwater-A-trend",
+          "layerid": "ols-rmse-grace-ave",
+          "prefix": "ols-rmse-grace-ave",
+          "suffix": "RL05-f-A-1deg"
+        }
+      ]
+    },
+    {
+      "processid": "CreateScaling",
+      "overwrite": true,
+      "parameters": {
+        "scalefac": "100"
+      },
+      "comp": [
+        {
+          "id": "1",
+          "source": "NASA-GRACE",
+          "product": "ave-cmwater",
+          "content": "cmwater-annual-trend-A",
+          "layerid": "ols-r2-grace-ave",
+          "suffix": "RL05-filled"
+        },
+        {
+          "id": "ols-r2-grace-ave",
+          "source": "NASA-GRACE",
+          "product": "cmwater",
+          "content": "cmwater-A-trend",
+          "layerid": "ols-r2-grace-ave",
+          "prefix": "ols-r2-grace-ave",
+          "suffix": "RL05-f-A-1deg"
+        }
+      ]
+    },
+    {
+      "processid": "CreateScaling",
+      "overwrite": true,
+      "parameters": {
+        "mirror0": true,
+        "scalefac": "2"
+      },
+      "comp": [
+        {
+          "grace-ave-change": {
+            "source": "NASA-GRACE",
+            "product": "cmwater",
+            "content": "cmwater-A-change",
+            "layerid": "grace-ave-change",
+            "prefix": "grace-ave-change",
+            "suffix": "model-RL05-f-A-1deg"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "CreateScaling",
+      "overwrite": true,
+      "parameters": {
+        "mirror0": true,
+        "scalefac": "25"
+      },
+      "comp": [
+        {
+          "grace-ave-delta": {
+            "source": "NASA-GRACE",
+            "product": "cmwater",
+            "content": "cmwater-A-change",
+            "layerid": "grace-ave-delta",
+            "prefix": "grace-ave-delta",
+            "suffix": "slopep-RL05-f-A-1deg"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1109 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-northlandease2n",
+    "tractid": "karttur-northlandease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "dem-orig": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "dem90-orig",
+            "prefix": "dem",
+            "suffix": "v01-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "dem-orig": {
+            "layerid": "dem90-orig",
+            "prefix": "dem",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "dem-pfpfhd": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "copdem-pfpfhd",
+            "prefix": "dem",
+            "suffix": "v01-pfpfhd-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "dem-pfpf": {
+            "layerid": "copdem-pfpfhd",
+            "prefix": "dem",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "dem-5": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "dem90",
+            "prefix": "dem",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "dem-5": {
+            "layerid": "dem90",
+            "prefix": "dem",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "shade-5-3x3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "shade90",
+            "prefix": "shade",
+            "suffix": "v01-pfpf-hydrdem4+4-90m-3x3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "shade-5-3x3": {
+            "layerid": "shade90",
+            "prefix": "shade",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+
+
+
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "slope-3x3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "slope90-3x3",
+            "prefix": "slope",
+            "suffix": "v01-pfpf-hydrdem4+4-90m-3x3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "slope-3x3": {
+            "layerid": "slope90-3x3",
+            "prefix": "slope",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "slope-9x9": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "slope90-9x9",
+            "prefix": "slope",
+            "suffix": "v01-pfpf-hydrdem4+4-90m-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "slope-9x9": {
+            "layerid": "slope90-9x9",
+            "prefix": "slope",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "tpi-3x3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tpi-3x3",
+            "prefix": "tpi",
+            "suffix": "v01-pfpf-hydrdem4+4-90m-3x3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tpi-3x3": {
+            "content": "tpi",
+            "layerid": "tpi-3x3",
+            "prefix": "tpi",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "tpi-9x9": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tpi-9x9",
+            "prefix": "tpi",
+            "suffix": "v01-pfpf-hydrdem4+4-90m-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tpi-9x9": {
+            "content": "dem",
+            "layerid": "tpi-9x9",
+            "prefix": "tpi",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "tri3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tri-3x3",
+            "prefix": "tri",
+            "suffix": "v01-90m-3x3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tri3": {
+            "content": "ruggedness",
+            "layerid": "tri-3x3",
+            "prefix": "tri",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "tri9": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tri-9x9",
+            "prefix": "tri",
+            "suffix": "v01-90m-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tri9": {
+            "content": "ruggedness",
+            "layerid": "tri-9x9",
+            "prefix": "tri",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "landdem": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "landdem",
+            "layerid": "land-dem",
+            "prefix": "land-dem",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "landdem": {
+            "layerid": "land-dem",
+            "prefix": "dem",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "flowdir": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "flowdir",
+            "layerid": "flowdir90",
+            "prefix": "flowdir",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "flowdir": {
+            "layerid": "flowdir90",
+            "prefix": "flowdir",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "tci": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "tci90",
+            "prefix": "tci",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tci": {
+            "content": "topowetness",
+            "layerid": "tci90",
+            "prefix": "tci",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "updrain": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "mfd-updrain90",
+            "prefix": "mfd-updrain",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "updrain": {
+            "content": "updrain",
+            "layerid": "mfd-updrain90",
+            "prefix": "mfd-updrain",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "sfd-updrain": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "sfd-updrain90",
+            "prefix": "sfd-updrain",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "sfd-updrain": {
+            "content": "updrain",
+            "layerid": "sfd-updrain90",
+            "prefix": "sfd-updrain",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "hydraulhead": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "hydraulhead90",
+            "prefix": "hydraulhead",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "hydraulhead": {
+            "content": "HAND",
+            "layerid": "hydraulhead90",
+            "prefix": "hydraulhead",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "stream-dist": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "terrain",
+            "layerid": "stream-dist90",
+            "prefix": "stream-dist",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "stream-dist": {
+            "content": "HAND",
+            "layerid": "stream-dist90",
+            "prefix": "stream-dist",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "slope9": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "slope9",
+            "prefix": "slope",
+            "suffix": "v01-90m-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "slope9": {
+            "content": "slope",
+            "layerid": "slope9",
+            "prefix": "slope",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "slope3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "slope-3x3",
+            "prefix": "slope",
+            "suffix": "v01-90m-3x3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "slope3": {
+            "content": "slope",
+            "layerid": "slope3",
+            "prefix": "slope",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "geomorph3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "geomorph",
+            "prefix": "geomorph",
+            "suffix": "v01-90m-grass-3x3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "geomorph3": {
+            "content": "landform",
+            "layerid": "geomorph",
+            "prefix": "geomorph",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "geomorph5": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "geomorph",
+            "prefix": "geomorph",
+            "suffix": "v01-90m-grass-5x5-elev3x3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "geomorph5": {
+            "content": "landform",
+            "layerid": "geomorph",
+            "prefix": "geomorph",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "geomorph9": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "geomorph",
+            "prefix": "geomorph",
+            "suffix": "v01-90m-grass-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "geomorph9": {
+            "content": "landform",
+            "layerid": "geomorph",
+            "prefix": "geomorph",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "lf": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "landform-TPI",
+            "prefix": "landform-TPI",
+            "suffix": "v01-90m-np-stnd-1+3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "lf": {
+            "content": "landform",
+            "layerid": "landform-TPI",
+            "prefix": "landform-TPI",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "lf": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "landform-ps",
+            "prefix": "landform-ps",
+            "suffix": "v01-90m-grass-3x3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "lf": {
+            "content": "landform",
+            "layerid": "landform-ps",
+            "prefix": "landform-ps",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "lf": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "landform-ps",
+            "prefix": "landform-ps",
+            "suffix": "v01-90m-grass-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "lf": {
+            "content": "landform",
+            "layerid": "landform-ps",
+            "prefix": "landform-ps",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+
+
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "tri-3x3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tri-3x3",
+            "prefix": "tri",
+            "suffix": "v01-pfpf-hydrdem4+4-90m-3x3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tri-3x3": {
+            "content": "tri",
+            "layerid": "tri-3x3",
+            "prefix": "tri",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "tri-9x9": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tri-9x9",
+            "prefix": "tri",
+            "suffix": "v01-pfpf-hydrdem4+4-90m-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tri-9x9": {
+            "content": "tri",
+            "layerid": "tri-9x9",
+            "prefix": "tri",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "slope-3x3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "slope-3x3",
+            "prefix": "slope",
+            "suffix": "v01-pfpf-hydrdem4+4-90m-3x3"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "slope-3x3": {
+            "content": "slope",
+            "layerid": "slope-3x3",
+            "prefix": "slope",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "slope-9x9": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "slope-9x9",
+            "prefix": "slope",
+            "suffix": "v01-pfpf-hydrdem4+4-90m-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "slope-9x9": {
+            "content": "slope",
+            "layerid": "slope-9x9",
+            "prefix": "slope",
+            "suffix": "copy"
+          }
+        }
+      ]
+    }
+  ]
+}

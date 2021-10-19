@@ -1,0 +1,566 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-northlandease2n",
+    "tractid": "karttur-northlandease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": true,
+      "parameters": {
+        "palette": "slope",
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": "Slope (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Karttur",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Karttur",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "slope3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "slope",
+            "prefix": "slope",
+            "suffix": "v01-90m-grass-3x3"
+          }
+        },
+        {
+          "slope9": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "slope",
+            "prefix": "slope",
+            "suffix": "v01-90m-grass-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "slope3": {
+            "layerid": "slope",
+            "prefix": "slope",
+            "suffix": "copy"
+          }
+        },
+        {
+          "slope9": {
+            "layerid": "slope",
+            "prefix": "slope",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": true,
+      "parameters": {
+        "palette": "slope2",
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": "Slope (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Karttur",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Karttur",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "slope3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "slope",
+            "prefix": "slope",
+            "suffix": "v01-90m-grass-3x3"
+          }
+        },
+        {
+          "slope9": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "slope",
+            "prefix": "slope",
+            "suffix": "v01-90m-grass-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "slope3": {
+            "layerid": "slope",
+            "prefix": "slope2",
+            "suffix": "copy"
+          }
+        },
+        {
+          "slope9": {
+            "layerid": "slope",
+            "prefix": "slope2",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": true,
+      "parameters": {
+        "palette": "slope3",
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": "Slope (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Karttur",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Karttur",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "slope3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "slope",
+            "prefix": "slope",
+            "suffix": "v01-90m-grass-3x3"
+          }
+        },
+        {
+          "slope9": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "slope",
+            "prefix": "slope",
+            "suffix": "v01-90m-grass-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "slope3": {
+            "layerid": "slope",
+            "prefix": "slope3",
+            "suffix": "copy"
+          }
+        },
+        {
+          "slope9": {
+            "layerid": "slope",
+            "prefix": "slope3",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": false,
+      "parameters": {
+        "palette": "demcurvature",
+        "crop": "1000,1000,9000,0",
+        "zscore": false,
+        "minmax": false,
+        "border": 4,
+        "title": "%(prefix)s curvature (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Karttur",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Karttur",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "profc3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "profc",
+            "prefix": "profc",
+            "suffix": "v01-90m-grass-3x3"
+          }
+        },
+        {
+          "profc9": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "profc",
+            "prefix": "profc",
+            "suffix": "v01-90m-grass-9x9"
+          }
+        },
+        {
+          "crosc3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "crosc",
+            "prefix": "crosc",
+            "suffix": "v01-90m-grass-3x3"
+          }
+        },
+        {
+          "crosc9": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "crosc",
+            "prefix": "crosc",
+            "suffix": "v01-90m-grass-9x9"
+          }
+        },
+        {
+          "planc3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "planc",
+            "prefix": "planc",
+            "suffix": "v01-90m-grass-3x3"
+          }
+        },
+        {
+          "planc9": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "planc",
+            "prefix": "planc",
+            "suffix": "v01-90m-grass-9x9"
+          }
+        },
+        {
+          "longc3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "longc",
+            "prefix": "longc",
+            "suffix": "v01-90m-grass-3x3"
+          }
+        },
+        {
+          "longc9": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "longc",
+            "prefix": "longc",
+            "suffix": "v01-90m-grass-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "profc3": {
+            "layerid": "profc",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        },
+        {
+          "profc9": {
+            "layerid": "profc",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        },
+        {
+          "crosc3": {
+            "layerid": "crosc",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        },
+        {
+          "crosc9": {
+            "layerid": "crosc",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        },
+        {
+          "planc3": {
+            "layerid": "planc",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        },
+        {
+          "planc9": {
+            "layerid": "planc",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        },
+        {
+          "longc3": {
+            "layerid": "longc",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        },
+        {
+          "longc9": {
+            "layerid": "longc",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": false,
+      "parameters": {
+        "palette": "tpi",
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": "TPI (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Karttur",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Karttur",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "tpi1": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tpi",
+            "prefix": "tpi",
+            "suffix": "v01-90m-3x3"
+          }
+        },
+        {
+          "tpi3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tpi",
+            "prefix": "tpi",
+            "suffix": "v01-90m-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tpi1": {
+            "layerid": "tpi",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        },
+        {
+          "tpi3": {
+            "layerid": "tpi",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": true,
+      "parameters": {
+        "palette": "tri",
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": "TRI (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Karttur",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Karttur",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "tri1": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tri",
+            "prefix": "tri",
+            "suffix": "v01-90m-3x3"
+          }
+        },
+        {
+          "tri3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tri",
+            "prefix": "tri",
+            "suffix": "v01-90m-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tri1": {
+            "layerid": "tri",
+            "prefix": "tri12",
+            "suffix": "copy"
+          }
+        },
+        {
+          "tri3": {
+            "layerid": "tri",
+            "prefix": "tri13",
+            "suffix": "copy"
+          }
+        }
+      ]
+    },
+
+
+    {
+      "processid": "ExportTilesToByte",
+      "overwrite": true,
+      "parameters": {
+        "palette": "tri2",
+        "crop": "1000,1000,9000,0",
+        "border": 4,
+        "title": "TRI (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "Karttur",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Karttur",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "tri1": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tri",
+            "prefix": "tri",
+            "suffix": "v01-90m-3x3"
+          }
+        },
+        {
+          "tri3": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "tri",
+            "prefix": "tri",
+            "suffix": "v01-90m-9x9"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tri1": {
+            "layerid": "tri",
+            "prefix": "tri21",
+            "suffix": "copy"
+          }
+        },
+        {
+          "tri3": {
+            "layerid": "tri",
+            "prefix": "tri23",
+            "suffix": "copy"
+          }
+        }
+      ]
+    }
+
+
+  ]
+}

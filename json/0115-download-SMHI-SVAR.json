@@ -1,0 +1,30 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-arcticdemext",
+    "tractid": "karttur-arcticdemext",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "DownloadAncillary",
+      "overwrite": false,
+      "parameters": {
+        "downloadcode": "filelist",
+        "path": "DOWNLOADS/SMHI/SVAR/SMHI-SVAR-Svenskt_vattenarkiv.txt",
+        "datadir": "RAWAUXILIARY/SMHI/SVAR"
+      },
+      "srcpath": {
+        "volume": "Ancillary"
+      },
+      "dstpath": {
+        "volume": "Ancillary"
+      }
+    }
+  ]
+}

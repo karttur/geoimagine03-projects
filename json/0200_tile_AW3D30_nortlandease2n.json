@@ -1,0 +1,55 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-northlandease2n",
+    "tractid": "karttur-northlandease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "TileAncillaryRegion",
+      "version": "1.3",
+      "overwrite": false,
+      "parameters": {
+        "defregid": "global",
+        "tr_xres": 30,
+        "tr_yres": 30,
+        "resample": "near",
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "vrt"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "aw3d30": {
+            "source": "ALOS",
+            "product": "aw3d30",
+            "content": "dem",
+            "layerid": "aw3d30",
+            "prefix": "dem30",
+            "suffix": "v01"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "aw3d30": {
+            "srccomp": "dem_aw3d30",
+            "layerid": "aw3d30"
+          }
+        }
+      ]
+    }
+  ]
+}

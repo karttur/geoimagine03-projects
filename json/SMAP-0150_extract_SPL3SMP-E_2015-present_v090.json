@@ -1,0 +1,41 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "smap"
+  },
+  "period": {
+    "startyear": 2015,
+    "startmonth": 3,
+    "startday": 31,
+    "endyear": 2021,
+    "endmonth": 1,
+    "endday": 1,
+    "timestep": "1D"
+  },
+  "process": [
+    {
+      "processid": "ExtractSmapHdf",
+      "overwrite": false,
+      "acceptmissing": true,
+      "parameters": {
+        "product": "SPL3SMP-E",
+        "version": "004",
+        "asscript": false,
+        "serverurl": "https://n5eil01u.ecs.nsidc.org/",
+        "remoteuser": "Gumbricht"
+      },
+      "srcpath": {
+        "volume": "WORK",
+        "hdr": "h5"
+      },
+      "dstpath": {
+        "volume": "WORK",
+        "hdr": "tif"
+      }
+    }
+  ]
+}

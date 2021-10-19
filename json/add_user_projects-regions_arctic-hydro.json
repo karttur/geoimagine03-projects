@@ -1,0 +1,165 @@
+{
+   "userproject": {
+      "userid": "karttur",
+      "projectid": "karttur",
+      "tractid": "karttur",
+      "siteid": "*",
+      "plotid": "*",
+      "system": "system"
+   },
+   "period": {
+      "timestep": "static"
+   },
+   "process": [
+      {
+         "processid": "ManageDefRegProj",
+         "overwrite": false,
+         "parameters": {
+            "defaultregion": "nordichydro_ease2n",
+            "tractid": "karttur-nordichydro_ease2n",
+            "tractname": "karttur nordichydro_ease2n",
+            "tracttitle": "karttur nordichydro_ease2n",
+            "tractlabel": "karttur nordichydro_ease2n",
+            "projid": "karttur-nordichydro_ease2n",
+            "projname": "karttur nordichydro_ease2n",
+            "projtitle": "karttur nordichydro_ease2n",
+            "projlabel": "karttur nordichydro_ease2n"
+         }
+      },
+      {
+         "processid": "ManageDefRegProj",
+         "overwrite": false,
+         "parameters": {
+            "defaultregion": "greenlandhydro_ease2n",
+            "tractid": "karttur-greenlandhydro_ease2n",
+            "tractname": "karttur greenlandhydro_ease2n",
+            "tracttitle": "karttur greenlandhydro_ease2n",
+            "tractlabel": "karttur greenlandhydro_ease2n",
+            "projid": "karttur-greenlandhydro_ease2n",
+            "projname": "karttur greenlandhydro_ease2n",
+            "projtitle": "karttur greenlandhydro_ease2n",
+            "projlabel": "karttur greenlandhydro_ease2n"
+         }
+      },
+      {
+         "processid": "ManageDefRegProj",
+         "overwrite": false,
+         "parameters": {
+            "defaultregion": "cahydro_ease2n",
+            "tractid": "karttur-cahydro_ease2n",
+            "tractname": "karttur cahydro_ease2n",
+            "tracttitle": "karttur cahydro_ease2n",
+            "tractlabel": "karttur cahydro_ease2n",
+            "projid": "karttur-cahydro_ease2n",
+            "projname": "karttur cahydro_ease2n",
+            "projtitle": "karttur cahydro_ease2n",
+            "projlabel": "karttur cahydro_ease2n"
+         }
+      },
+      {
+         "processid": "ManageDefRegProj",
+         "overwrite": false,
+         "parameters": {
+            "defaultregion": "alaskahydro_ease2n",
+            "tractid": "karttur-alaskahydro_ease2n",
+            "tractname": "karttur alaskahydro_ease2n",
+            "tracttitle": "karttur alaskahydro_ease2n",
+            "tractlabel": "karttur alaskahydro_ease2n",
+            "projid": "karttur-alaskahydro_ease2n",
+            "projname": "karttur alaskahydro_ease2n",
+            "projtitle": "karttur alaskahydro_ease2n",
+            "projlabel": "karttur alaskahydro_ease2n"
+         }
+      },
+      {
+         "processid": "ManageDefRegProj",
+         "overwrite": false,
+         "parameters": {
+            "defaultregion": "kolymahydro_ease2n",
+            "tractid": "karttur-kolymahydro_ease2n",
+            "tractname": "karttur kolymahydro_ease2n",
+            "tracttitle": "karttur kolymahydro_ease2n",
+            "tractlabel": "karttur kolymahydro_ease2n",
+            "projid": "karttur-kolymahydro_ease2n",
+            "projname": "karttur kolymahydro_ease2n",
+            "projtitle": "karttur kolymahydro_ease2n",
+            "projlabel": "karttur kolymahydro_ease2n"
+         }
+      },
+      {
+         "processid": "ManageDefRegProj",
+         "overwrite": false,
+         "parameters": {
+            "defaultregion": "lenahydro_ease2n",
+            "tractid": "karttur-lenahydro_ease2n",
+            "tractname": "karttur lenahydro_ease2n",
+            "tracttitle": "karttur lenahydro_ease2n",
+            "tractlabel": "karttur lenahydro_ease2n",
+            "projid": "karttur-lenahydro_ease2n",
+            "projname": "karttur lenahydro_ease2n",
+            "projtitle": "karttur lenahydro_ease2n",
+            "projlabel": "karttur lenahydro_ease2n"
+         }
+      },
+      {
+         "processid": "ManageDefRegProj",
+         "overwrite": false,
+         "parameters": {
+            "defaultregion": "yieniseyhydro_ease2n",
+            "tractid": "karttur-yieniseyhydro_ease2n",
+            "tractname": "karttur yieniseyhydro_ease2n",
+            "tracttitle": "karttur yieniseyhydro_ease2n",
+            "tractlabel": "karttur yieniseyhydro_ease2n",
+            "projid": "karttur-yieniseyhydro_ease2n",
+            "projname": "karttur yieniseyhydro_ease2n",
+            "projtitle": "karttur yieniseyhydro_ease2n",
+            "projlabel": "karttur yieniseyhydro_ease2n"
+         }
+      },
+      {
+         "processid": "ManageDefRegProj",
+         "overwrite": false,
+         "parameters": {
+            "defaultregion": "obhydro_ease2n",
+            "tractid": "karttur-obhydro_ease2n",
+            "tractname": "karttur obhydro_ease2n",
+            "tracttitle": "karttur obhydro_ease2n",
+            "tractlabel": "karttur obhydro_ease2n",
+            "projid": "karttur-obhydro_ease2n",
+            "projname": "karttur obhydro_ease2n",
+            "projtitle": "karttur obhydro_ease2n",
+            "projlabel": "karttur obhydro_ease2n"
+         }
+      },
+      {
+         "processid": "ManageDefRegProj",
+         "overwrite": false,
+         "parameters": {
+            "defaultregion": "dvinahydro_ease2n",
+            "tractid": "karttur-dvinahydro_ease2n",
+            "tractname": "karttur dvinahydro_ease2n",
+            "tracttitle": "karttur dvinahydro_ease2n",
+            "tractlabel": "karttur dvinahydro_ease2n",
+            "projid": "karttur-dvinahydro_ease2n",
+            "projname": "karttur dvinahydro_ease2n",
+            "projtitle": "karttur dvinahydro_ease2n",
+            "projlabel": "karttur dvinahydro_ease2n"
+         }
+      },
+      {
+         "processid": "ManageDefRegProj",
+         "overwrite": false,
+         "parameters": {
+            "defaultregion": "arcticoceanhydro_ease2n",
+            "tractid": "karttur-arcticoceanhydro_ease2n",
+            "tractname": "karttur arcticoceanhydro_ease2n",
+            "tracttitle": "karttur arcticoceanhydro_ease2n",
+            "tractlabel": "karttur arcticoceanhydro_ease2n",
+            "projid": "karttur-arcticoceanhydro_ease2n",
+            "projname": "karttur arcticoceanhydro_ease2n",
+            "projtitle": "karttur arcticoceanhydro_ease2n",
+            "projlabel": "karttur arcticoceanhydro_ease2n"
+         }
+      }
+   ]
+}

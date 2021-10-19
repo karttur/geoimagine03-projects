@@ -1,0 +1,9 @@
+###### REGIONS #####
+
+###### These processes requires that the tiling systems have been defined ######
+
+### link all default regions to modis tiles
+## OK ## json/regions-modtiles_v090.json
+
+### link epsg:6931 default regions to ease2n tiles
+json/regions-link-ease2ntiles_v090.json

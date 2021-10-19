@@ -1,0 +1,189 @@
+###################################
+###################################
+###      Copernicus DEM         ###
+###################################
+###################################
+
+###################################
+###           Layout            ###
+###################################
+
+## json/0001_CreatesScaling_DEM_v090.json
+
+## json/0002_AddRasterPalette_DEM_v090.json
+
+## json/0003_createlegends_DEM_v090.json
+
+## json/0005_exportlegend_DEM_v090.json
+
+###################################
+###     Search and download     ###
+###################################
+
+## json/0100_SearchCopernicusProducts_CopDEM-90m.json
+
+## json/0110_DownloadCopernicus_CopDEM-90m.json
+
+###################################
+###            UnZip            ###
+###################################
+
+## json/0120_UnZipRawData_CopDEM-90m.json
+
+json/0122_BBoxTiledRawData_CopDEM-90m.json
+
+###################################
+###       Mosaic Download       ###
+###################################
+
+## json/0125_MosaicAncillary_CopDEM-90m.json
+
+## json/0125-COPDEM30-mosaic-raw.json
+
+###################################
+###           Organize          ###
+###################################
+
+## json/0160-Ancillary-import-CopDEM30.json
+
+## json/0160-Ancillary-import-CopDEM90.json
+
+###################################
+###            Tiling           ###
+###################################
+
+## json/0180_TileAncillaryRegion_CopDem-30m.json
+
+## json/0180_TileAncillaryRegion_CopDem-90m.json
+
+###################################
+###         Mosaic tiles        ###
+###################################
+
+## json/0190_MosaicAdjacentTiles_CopDEM-30m.json
+
+## json/0190_MosaicAdjacentTiles_CopDEM-90m.json
+
+###################################
+###       DEM Corrections       ###
+###################################
+
+## Fill single pits and peaks (adjacent to streams)
+## json/0230_GrassDemFillDirTiles_CopDEM_90m.json
+
+## Create virtual mosaics of the filled DEM
+## json/0191_MosaicAdjacentTiles_CopDEM-90m.json
+
+## Fill larger pits in streams with r.hydrodem
+## json/0240_GrassDemHydroDemTiles_CopDEM-90m.json
+
+## Create virtual mosaics of the twice filled DEM
+## json/0192_MosaicAdjacentTiles_CopDEM-90m.json
+
+#############################################
+### River mouth and Shoreline corrections ###
+#############################################
+
+## json/0210_GrassOnetoManyTiles-correct-shoreline_CopDEM-90m.json
+
+###################################
+###  DEM kernel based derivates ###
+###################################
+
+## json/0301_GdalDemTiles_CopDEM-90m.json
+
+## ?? json/0310_CopernicusDEM_gdaldem_ease2n.json
+
+## json/0303b_NumpyDemTiles_CopDEM-90m.json
+
+## ?? json/0312_COPDEM_numpydemtpi_ease2n.json
+
+## json/0312b_COPDEM_numpydemtpi_ease2n.json
+
+## ?? json/0310_CopDEM_grassdem_ease2n.json
+
+## Create DEM derivates at 3x3 and 9x9 cells
+## /json/0305_GrassOnetoManyTiles-DEM-derivates-3+9cell_CopDEM-90m.json
+
+###################################
+###   DEM hillslope derivates   ###
+###################################
+
+## json/0311_GrassOnetoManyTiles_hillslope-derivates_copDEM-90m.json
+
+###################################
+###     DEM basin extraction    ###
+###################################
+
+## json/0321_GrassOnetoManyTilesCopDEM-basin-extract-stage2_copDEM.json
+## json/0321b_GrassOnetoManyTilesCopDEM-basin-extract-stage2_copDEM.json
+
+## After 0321_GrassOnetoManyTilesCopDEM-basin-## extract-stage2_copDEM
+## json/0325_BasinOutletTiles_CopDEM-90m.json
+
+# Extra output from the grass session above
+
+## json/0315_CopDEM_Basin-outlets-tiles-r-out-gdal_ease2n.json
+
+###################################
+###     Define hydro regions    ###
+###################################
+
+## Reduce resolution to 1 km
+## NOT REQUIRED
+## json/0313_CopDEM_translate1km_ease2n.json
+
+## Mosaic entire northern hemisphere at 90m
+## json/0313_CopDEM_mosaic1km_ease2n.json
+
+###################################
+###   Mosaic to Hydro regions   ###
+###################################
+
+## json/0225_MosaicTiles-copDEM.json
+
+###################################
+###       Extract raster        ###
+###################################
+
+## WORKINPROGRESS ExtractTilesPointList
+
+###################################
+###        Export tiles         ###
+###################################
+
+### Export elevation data with different color ramps
+## json/0905A_ExportTilesToByte_CopDEM-elevation_v090.json
+
+### Export shaded elevation data with different color ramps
+## json/0906A_ExportShadedTilesToByte_CopDEM-elevation_v090.json
+
+## json/0905_DEM-curvature_ExportShadeTilesToByte_v090.json
+
+## json/0905_DEM_ExportTilesToByte_v090.json
+
+## json/0905_DEM-slope_ExportTilesToByte_v090.json
+
+## json/0905_DEM-TRI_ExportTilesToByte_v090.json
+
+#json/0905_DEM-landforms_ExportTilesToByte_v090.json
+
+## json/0905_DEM_ExportShadeTilesToByte_v090.json
+
+## json/0905_terrain_ExportTilesToByte_v090.json
+
+## json/0906_DEM-elevation_ExportShadeTilesToByte_v090.json
+
+## json/0906_DEM-curvature_ExportShadeTilesToByte_v090.json
+
+###################################
+###       Duplicate tiles       ###
+###################################
+
+## json/0950_duplicate_CopDEM_v090_temp.json
+
+###################################
+###        Archive tiles        ###
+###################################
+
+## json/0960b_ZipArchive_DEM_v090.json

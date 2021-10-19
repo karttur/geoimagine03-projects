@@ -1,0 +1,65 @@
+{
+  "postgresdb": {
+    "db": "geoimagine"
+  },
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "startyear": 2003,
+    "endyear": 2016,
+    "timestep": "A"
+  },
+  "process": {
+    "processid": "TrendTimeSeries",
+    "overwrite": false,
+    "parameters": {
+      "method": "avg"
+    },
+    "srcpath": {
+      "volume": "africa",
+      "hdr": "tif",
+      "dat": "tif"
+    },
+    "dstpath": {
+      "volume": "africa",
+      "hdr": "tif",
+      "dat": "tif"
+    },
+    "srccomp": [
+      {
+        "grace-ave": {
+          "source": "NASA-GRACE",
+          "product": "cmwater",
+          "content": "cmwater-A",
+          "layerid": "grace-ave",
+          "prefix": "grace-ave",
+          "suffix": "RL05-f-A"
+        }
+      }
+    ],
+    "stats": [
+      {
+        "id": "avg",
+        "layerid": "avg"
+      },
+      {
+        "id": "std",
+        "layerid": "std"
+      },
+      {
+        "id": "mk",
+        "layerid": "mk"
+      },
+      {
+        "id": "ols",
+        "layerid": "ols"
+      }
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-northlandease2n",
+    "tractid": "karttur-northlandease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "ExportShadedTilesToByte",
+      "overwrite": true,
+      "overwriteshade": false,
+      "overwriteslayout": true,
+      "parameters": {
+        "palette": "dem1auto",
+        "crop": "1000,1000,9000,0",
+        "zscore": false,
+        "minmax": true,
+        "alphashade": 0.5,
+        "border": 4,
+        "title": "%(prefix)s shaded relief (%(suffix)s)",
+        "titlegravity": "North",
+        "titlefontcolor": "black",
+        "titlefont": "Tahoma",
+        "titlefontsize": 48,
+        "detaillegend": true,
+        "legendopacity": 128,
+        "detaillegendgravity": "southwest",
+        "jpg": 85
+      },
+      "srcpath": {
+        "volume": "karttur",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "karttur",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "shade": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "shade",
+            "prefix": "shade",
+            "suffix": "v01-90m-3x3"
+          }
+        },
+        {
+          "elev1": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "dem",
+            "prefix": "dem",
+            "suffix": "v01-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "shade": {
+            "layerid": "shade",
+            "prefix": "copy",
+            "suffix": "copy"
+          }
+        },
+        {
+          "elev1": {
+            "layerid": "dem",
+            "prefix": "dem3-shade",
+            "suffix": "copy"
+          }
+        }
+      ]
+    }
+  ]
+}

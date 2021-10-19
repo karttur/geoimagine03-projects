@@ -1,0 +1,33 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "modispolar"
+  },
+  "period": {
+    "startyear": 2020,
+    "startmonth": 1,
+    "startday": 1,
+    "endyear": 2021,
+    "endmonth": 2,
+    "endday": 23,
+    "timestep": "1D"
+  },
+  "process": [
+    {
+      "processid": "SearchModisPolarProducts",
+      "parameters": {
+        "remoteuser": "Gumbricht",
+        "product": "MOD29P1D",
+        "version": "006",
+        "serverurl": "https://n5eil01u.ecs.nsidc.org/"
+      },
+      "dstpath": {
+        "volume": "karttur"
+      }
+    }
+  ]
+}

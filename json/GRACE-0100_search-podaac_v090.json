@@ -1,0 +1,66 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "startyear": 2002,
+    "startmonth": 4,
+    "startday": 1,
+    "endyear": 2020,
+    "endmonth": 12,
+    "endday": 31,
+    "timestep": "M"
+  },
+  "process": [
+    {
+      "processid": "SearchGraceProducts",
+      "overwrite": true,
+      "parameters": {
+        "feature": "land_mass",
+        "model": "RL06",
+        "version": "v03",
+        "solutionset": "CSR",
+        "remoteuser": "Gumbricht",
+        "serverurl": "https://podaac-tools.jpl.nasa.gov"
+      },
+      "dstpath": {
+        "volume": "karttur"
+      }
+    },
+    {
+      "processid": "SearchGraceProducts",
+      "overwrite": true,
+      "parameters": {
+        "feature": "land_mass",
+        "model": "RL06",
+        "version": "v03",
+        "solutionset": "GFZ",
+        "remoteuser": "Gumbricht",
+        "serverurl": "https://podaac-tools.jpl.nasa.gov"
+      },
+      "dstpath": {
+        "volume": "karttur"
+      }
+    },
+    {
+      "processid": "SearchGraceProducts",
+      "overwrite": true,
+      "parameters": {
+        "feature": "land_mass",
+        "model": "RL06",
+        "version": "v03",
+        "solutionset": "JPL",
+        "remoteuser": "Gumbricht",
+        "serverurl": "https://podaac-tools.jpl.nasa.gov"
+      },
+      "dstpath": {
+        "volume": "karttur"
+      }
+    }
+  ]
+}

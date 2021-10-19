@@ -1,0 +1,54 @@
+{
+   "userproject": {
+      "userid": "karttur",
+      "projectid": "karttur-yieniseyhydro_ease2n",
+      "tractid": "karttur-yieniseyhydro_ease2n",
+      "siteid": "*",
+      "plotid": "*",
+      "system": "ease2n"
+   },
+   "period": {
+      "timestep": "static"
+   },
+   "process": [
+      {
+         "processid": "MosaicTiles",
+         "version": "1.3",
+         "overwrite": false,
+         "parameters": {
+            "resample": "near",
+            "asscript": false,
+            "fillnodata": false,
+            "fillmaxdist": 0,
+            "fillsmooth": 0
+         },
+         "srcpath": {
+            "volume": "Ancillary"
+         },
+         "dstpath": {
+            "volume": "Ancillary"
+         },
+         "srccomp": [
+            {
+               "dem": {
+                  "source": "ESA",
+                  "product": "copdem",
+                  "content": "dem",
+                  "layerid": "dem90",
+                  "prefix": "dem",
+                  "suffix": "v01-pfpf-hydrdem4+4-90m"
+               }
+            }
+         ],
+         "dstcopy": [
+            {
+               "dem": {
+                  "layerid": "dem90",
+                  "prefix": "dem",
+                  "suffix": "v01-pfpf-hydrdem4+4-90m"
+               }
+            }
+         ]
+      }
+   ]
+}

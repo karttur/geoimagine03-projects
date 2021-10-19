@@ -1,0 +1,52 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-arcticdemease2n",
+    "tractid": "karttur-arcticdemease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "MosaicTiles",
+      "version": "1.3",
+      "overwrite": false,
+      "parameters": {
+        "tr_xres": 500,
+        "tr_yres": 500,
+        "resample": "near",
+        "asscript": false
+      },
+      "srcpath": {
+        "volume": "karttur"
+      },
+      "dstpath": {
+        "volume": "karttur"
+      },
+      "srccomp": [
+        {
+          "dem500": {
+            "source": "NGA-NSF",
+            "product": "arcticdem",
+            "content": "dem",
+            "layerid": "dem500",
+            "prefix": "dem500",
+            "suffix": "v30"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "dem500": {
+            "srccomp": "dem_dem500",
+            "layerid": "dem500"
+          }
+        }
+      ]
+    }
+  ]
+}

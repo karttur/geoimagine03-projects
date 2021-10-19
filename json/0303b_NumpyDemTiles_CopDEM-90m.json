@@ -1,0 +1,58 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-northlandease2n",
+    "tractid": "karttur-northlandease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+
+    {
+      "processid": "NumpyDemTiles",
+      "version": "1.3",
+      "overwrite": false,
+      "parameters": {
+        "mode": "TPI",
+        "mosaic": true,
+        "radiuscsv": "11"
+      },
+      "srcpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "copdem90": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "dem",
+            "prefix": "dem",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "copdem90": {
+            "layerid": "auto",
+            "prefix": "dummy3x3",
+            "suffix": "auto",
+            "dataunit": "auto",
+            "celltype": "float32",
+            "cellnull": "-32768"
+          }
+        }
+      ]
+    }
+  ]
+}

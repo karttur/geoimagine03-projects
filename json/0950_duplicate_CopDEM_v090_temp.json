@@ -1,0 +1,51 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-northlandease2n",
+    "tractid": "karttur-northlandease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "DuplicateTiles",
+      "overwrite": false,
+      "parameters": {
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Arctic2021",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "landdem": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "landdem",
+            "layerid": "land-dem",
+            "prefix": "land-dem",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "landdem": {
+            "layerid": "land-dem",
+            "prefix": "dem",
+            "suffix": "copy"
+          }
+        }
+      ]
+    }
+  ]
+}

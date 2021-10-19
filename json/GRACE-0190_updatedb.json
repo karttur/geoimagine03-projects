@@ -1,0 +1,46 @@
+{
+  "updatedb": {
+    "userproj": {
+      "userid": "karttur",
+      "projectid": "karttur",
+      "tractid": "karttur",
+      "siteid": "*",
+      "plotid": "*",
+      "system": "ancillary"
+    },
+    "period": {
+      "startyear": 2002,
+      "startmonth": 4,
+      "startday": 23,
+      "endyear": 2016,
+      "endmonth": 12,
+      "endday": 31,
+      "timestep": "M"
+    },
+    "process": {
+      "processid": "UpdateDbAncillary",
+      "overwrite": true,
+      "parameters": null,
+      "dstpath": {
+        "volume": "africa",
+        "hdr": "tif"
+      },
+      "dstcomp": [
+        {
+          "grace-ave": {
+            "source": "NASA-GRACE",
+            "product": "cmwater",
+            "content": "cmwater",
+            "layerid": "grace-ave",
+            "prefix": "grace-ave",
+            "suffix": "RL05-f",
+            "cellnull": 32767,
+            "celltype": "Float32",
+            "measure": "R",
+            "dataunit": "cm"
+          }
+        }
+      ]
+    }
+  }
+}

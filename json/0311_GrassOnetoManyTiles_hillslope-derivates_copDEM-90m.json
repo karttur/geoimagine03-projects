@@ -1,0 +1,480 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-northlandease2n",
+    "tractid": "karttur-northlandease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "GrassOnetoManyTiles",
+      "version": "1.3",
+      "overwrite": true,
+      "dryrun": false,
+      "verbose": 1,
+      "parameters": {
+        "asscript": true,
+        "mosaic": true,
+        "regionlayer": "DEM",
+        "subparameter": [
+          {
+            "g.region": {
+              "raster": "DEM"
+            }
+          },
+          {
+            "r.mapcalc": {
+              "\"blocking ": " 0\"",
+              "overwrite": true
+            }
+          },
+          {
+            "r.watershed": {
+              "flags": "a",
+              "elevation": "inland_comp_DEM",
+              "max_slope_length": 750,
+              "blocking": "blocking",
+              "accumulation": "MFDupstream",
+              "drainage": "MFDflowdir",
+              "stream": "MFDstream",
+              "tci": "MFDtci",
+              "spi": "MFDspi",
+              "length_slope": "MFDslopelength",
+              "slope_steepness": "MFDslopesteepness",
+              "threshold": 617,
+              "memory": 4000,
+              "overwrite": true
+            }
+          },
+          {
+            "r.watershed": {
+              "flags": "as",
+              "elevation": "inland_comp_DEM",
+              "accumulation": "SFDupstream",
+              "threshold": 617,
+              "memory": 4000,
+              "overwrite": true
+            }
+          },
+          {
+            "r.stream.extract": {
+              "elevation": "inland_comp_DEM",
+              "accumulation": "MFDupstream",
+              "threshold": 247,
+              "mexp": 1.2,
+              "stream_length": 4,
+              "stream_rast": "extractstream",
+              "stream_vector": "extractstreamvect",
+              "direction": "extractflowdir",
+              "memory": "4000",
+              "overwrite": true
+            }
+          },
+          {
+            "r.stream.distance": {
+              "stream_rast": "extractstream",
+              "direction": "extractflowdir",
+              "elevation": "inland_comp_DEM",
+              "distance": "streamproximity",
+              "difference": "hydhead",
+              "method": "downstream",
+              "memory": "4000",
+              "overwrite": true
+            }
+          },
+          {
+            "r.stream.distance": {
+              "flags": "n",
+              "stream_rast": "extractstream",
+              "direction": "extractflowdir",
+              "elevation": "inland_comp_DEM",
+              "distance": "neardividehorizontal",
+              "difference": "neardividevertical",
+              "method": "upstream",
+              "memory": "4000",
+              "overwrite": true
+            }
+          },
+          {
+            "r.stream.distance": {
+              "stream_rast": "extractstream",
+              "direction": "extractflowdir",
+              "elevation": "inland_comp_DEM",
+              "distance": "fardividehorizontal",
+              "difference": "fardividevertical",
+              "method": "upstream",
+              "memory": "4000",
+              "overwrite": true
+            }
+          },
+          {
+            "g.remove": {
+              "flags": "f",
+              "type": "raster",
+              "name": "blocking"
+            }
+          },
+          {
+            "r.out.gdal": {
+              "flags": "f",
+              "input": "MFDflowdir",
+              "type": "Float32",
+              "output": "MFD_flowdir"
+            }
+          },
+          {
+            "r.out.gdal": {
+              "flags": "f",
+              "input": "MFDupstream",
+              "type": "Float32",
+              "output": "MFD_upstream"
+            }
+          },
+          {
+            "r.out.gdal": {
+              "flags": "f",
+              "input": "SFDupstream",
+              "type": "Float32",
+              "output": "SFD_upstream"
+            }
+          },
+          {
+            "r.out.gdal": {
+              "flags": "f",
+              "input": "MFDtci",
+              "type": "Float32",
+              "output": "MFD_tci"
+            }
+          },
+          {
+            "g.remove": {
+              "flags": "f",
+              "type": "raster",
+              "name": "MFDtci"
+            }
+          },
+          {
+            "r.out.gdal": {
+              "flags": "f",
+              "input": "MFDspi",
+              "type": "Float32",
+              "output": "MFD_spi"
+            }
+          },
+          {
+            "g.remove": {
+              "flags": "f",
+              "type": "raster",
+              "name": "MFDspi"
+            }
+          },
+          {
+            "r.out.gdal": {
+              "flags": "f",
+              "input": "MFDslopelength",
+              "type": "Float32",
+              "output": "MFD_slope_length"
+            }
+          },
+          {
+            "g.remove": {
+              "flags": "f",
+              "type": "raster",
+              "name": "MFDslopelength"
+            }
+          },
+          {
+            "r.out.gdal": {
+              "flags": "f",
+              "input": "MFDslopesteepness",
+              "type": "Float32",
+              "output": "MFD_slope_steepness"
+            }
+          },
+          {
+            "g.remove": {
+              "flags": "f",
+              "type": "raster",
+              "name": "MFDslopesteepness"
+            }
+          },
+          {
+            "r.out.gdal": {
+              "flags": "f",
+              "input": "streamproximity",
+              "type": "Float32",
+              "output": "stream_proximity"
+            }
+          },
+          {
+            "g.remove": {
+              "flags": "f",
+              "type": "raster",
+              "name": "streamproximity"
+            }
+          },
+          {
+            "r.out.gdal": {
+              "flags": "f",
+              "input": "hydhead",
+              "type": "Float32",
+              "output": "hydraulhead"
+            }
+          },
+          {
+            "g.remove": {
+              "flags": "f",
+              "type": "raster",
+              "name": "hydhead"
+            }
+          },
+          {
+            "r.out.gdal": {
+              "flags": "f",
+              "input": "neardividehorizontal",
+              "type": "Float32",
+              "output": "near_divide_horizontal"
+            }
+          },
+          {
+            "g.remove": {
+              "flags": "f",
+              "type": "raster",
+              "name": "neardividehorizontal"
+            }
+          },
+          {
+            "r.out.gdal": {
+              "flags": "f",
+              "input": "neardividevertical",
+              "type": "Float32",
+              "output": "near_divide_vertical"
+            }
+          },
+          {
+            "g.remove": {
+              "flags": "f",
+              "type": "raster",
+              "name": "neardividevertical"
+            }
+          },
+          {
+            "r.out.gdal": {
+              "flags": "f",
+              "input": "fardividehorizontal",
+              "type": "Float32",
+              "output": "far_divide_horizontal"
+            }
+          },
+          {
+            "g.remove": {
+              "flags": "f",
+              "type": "raster",
+              "name": "fardividehorizontal"
+            }
+          },
+          {
+            "r.out.gdal": {
+              "flags": "f",
+              "input": "fardividevertical",
+              "type": "Float32",
+              "output": "far_divide_vertical"
+            }
+          },
+          {
+            "g.remove": {
+              "flags": "f",
+              "type": "raster",
+              "name": "fardividevertical"
+            }
+          },
+          {
+            "r.out.gdal": {
+              "flags": "f",
+              "input": "extractstream",
+              "output": "stream_rast"
+            }
+          }
+        ]
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "*": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "copdem",
+            "prefix": "dem",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "MFD_flowdir": {
+            "source": "copy",
+            "product": "copy",
+            "content": "terrain",
+            "layerid": "mfd-flowdir",
+            "prefix": "mfd-flowdir",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "MFD_upstream": {
+            "source": "copy",
+            "product": "copy",
+            "content": "terrain",
+            "layerid": "mfd-updrain",
+            "prefix": "mfd-updrain",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "SFD_upstream": {
+            "source": "copy",
+            "product": "copy",
+            "content": "terrain",
+            "layerid": "sfd-updrain",
+            "prefix": "sfd-updrain",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "MFD_tci": {
+            "source": "copy",
+            "product": "copy",
+            "content": "terrain",
+            "layerid": "tci",
+            "prefix": "tci",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "MFD_spi": {
+            "source": "copy",
+            "product": "copy",
+            "content": "terrain",
+            "layerid": "spi",
+            "prefix": "spi",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "MFD_slope_length": {
+            "source": "copy",
+            "product": "copy",
+            "content": "terrain",
+            "layerid": "rusle-slopelength",
+            "prefix": "rusle-slopelength",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "MFD_slope_steepness": {
+            "source": "copy",
+            "product": "copy",
+            "content": "terrain",
+            "layerid": "rusle-slopesteepness",
+            "prefix": "rusle-slopesteepness",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "stream_proximity": {
+            "source": "copy",
+            "product": "copy",
+            "content": "terrain",
+            "layerid": "stream-dist",
+            "prefix": "stream-dist",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "hydraulhead": {
+            "source": "copy",
+            "product": "copy",
+            "content": "terrain",
+            "layerid": "hydraulhead",
+            "prefix": "hydraulhead",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "near_divide_horizontal": {
+            "source": "copy",
+            "product": "copy",
+            "content": "terrain",
+            "layerid": "near-divide-dist",
+            "prefix": "near-divide-dist",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "far_divide_vertical": {
+            "source": "copy",
+            "product": "copy",
+            "content": "terrain",
+            "layerid": "far-divide-head",
+            "prefix": "far-divide-head",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "near_divide_vertical": {
+            "source": "copy",
+            "product": "copy",
+            "content": "terrain",
+            "layerid": "near-divide-head",
+            "prefix": "near-divide-head",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "far_divide_horizontal": {
+            "source": "copy",
+            "product": "copy",
+            "content": "terrain",
+            "layerid": "far-divide-dist",
+            "prefix": "far-divide-dist",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "stream_rast": {
+            "source": "copy",
+            "product": "copy",
+            "content": "terrain",
+            "layerid": "stream-rast",
+            "prefix": "stream-rast",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "stream_vect": {
+            "source": "copy",
+            "product": "copy",
+            "content": "terrain",
+            "layerid": "stream-vect",
+            "prefix": "stream-vect",
+            "suffix": "v01-pfpf-hydrdem4+4-90m",
+            "ext:": ".shp"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "MosaicAncillary",
+      "overwrite": false,
+      "parameters": {
+        "mosaiccode": "subdirfiles",
+        "datadir": "RAWAUXILIARY/CopernicusDem90/DEM",
+        "datafile": "CopernicusDem90_mosaic"
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "vrt"
+      },
+      "dstcomp": [
+        {
+          "copernicusdem90": {
+            "source": "ESA",
+            "product": "copernicusdem",
+            "content": "dem",
+            "layerid": "copernicusdem90",
+            "prefix": "dem90",
+            "suffix": "v01"
+          }
+        }
+      ]
+    }
+  ]
+}

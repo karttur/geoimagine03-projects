@@ -1,0 +1,56 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-northlandease2n",
+    "tractid": "karttur-northlandease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "TileAncillaryRegion",
+      "version": "1.3",
+      "overwrite": false,
+      "parameters": {
+        "defregid": "global",
+        "tr_xres": 90,
+        "tr_yres": 90,
+        "resample": "near",
+        "asscript": true
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "vrt"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "tandemx": {
+            "source": "DLR",
+            "product": "tandemx",
+            "content": "dem",
+            "layerid": "tandemx90",
+            "prefix": "dem90",
+            "suffix": "v01",
+            "cellnull": -32767
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "tandemx": {
+            "srccomp": "dem_tandemx90",
+            "layerid": "tandemx90"
+          }
+        }
+      ]
+    }
+  ]
+}

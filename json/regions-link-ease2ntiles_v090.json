@@ -1,0 +1,41 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "LinkDefaultRegionTiles",
+      "overwrite": true,
+      "version": "0.9",
+      "verbose": 2,
+      "parameters": {
+        "defregmask": "northland"
+        },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "shp",
+        "dat": "shp"
+      },
+      "srccomp": [
+        {
+          "regions": {
+            "source": "karttur",
+            "product": "roi",
+            "content": "pubroi",
+            "layerid": "defreg",
+            "prefix": "defreg",
+            "suffix": "v010"
+          }
+        }
+      ]
+    }
+  ]
+}

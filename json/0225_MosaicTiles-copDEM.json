@@ -1,0 +1,56 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-nordichydro",
+    "tractid": "karttur-nordichydro",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "MosaicTiles",
+      "version": "1.3",
+      "overwrite": false,
+      "parameters": {
+        "tr_xres": 90,
+        "tr_yres": 90,
+        "resample": "near",
+        "asscript": false,
+        "fillnodata": false,
+        "fillmaxdist": 0,
+        "fillsmooth": 0
+      },
+      "srcpath": {
+        "volume": "Ancillary"
+      },
+      "dstpath": {
+        "volume": "Ancillary"
+      },
+      "srccomp": [
+        {
+          "copernicusdem90": {
+            "source": "ESA",
+            "product": "copernicusdem",
+            "content": "dem",
+            "layerid": "copernicusdem90",
+            "prefix": "dem90",
+            "suffix": "v01",
+            "cellnull": -32767
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "copernicusdem90": {
+            "srccomp": "dem_copernicusdem90",
+            "layerid": "copernicusdem90"
+          }
+        }
+      ]
+    }
+  ]
+}

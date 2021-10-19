@@ -1,0 +1,51 @@
+###################################
+###################################
+###           MODIS             ###
+###################################
+###################################
+
+###################################
+###     Search and download     ###
+###################################
+
+## Search data pool for MODIS products ##
+# OK # json/MODIS-0100_search-datapool_MCD43A4.json
+
+## Transfer search results to db ##
+json/MODIS-0110_search-todb_MCD43A4.json
+
+## Download the MODIS data for single tile position ##
+# OK # json/MODIS-0120_download_singletile.json
+
+## Check the db for downloaded single tile position ##
+## MODIS-0129_checksingletile.xml
+
+###################################
+###           Extract           ###
+###################################
+
+## Explode single tile position ##
+## MODIS-0130_explodsingletile.xml
+
+###################################
+###    MODIS TWI calculations   ###
+###################################
+
+## Orthogonal transformation ##
+## MODIS-0461_orthotrans_singletile.xml
+
+## Foreground index (TWI) ##
+## MODIS-0471_fgbg-TWI_singletile
+
+## Convert TWI to vol/vol soil moisture ##
+## MODIS-0472_TWI-percent_singletile
+
+###################################
+###    Time series processing   ###
+###################################
+
+## Extract season ##
+## MODIS-0320_TWI-extract-season_16D.xml
+
+## Interpolation Force fill with season
+## MODIS-0330_interpolseasn-16D.xml

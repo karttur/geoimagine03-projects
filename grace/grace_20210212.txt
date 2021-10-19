@@ -1,0 +1,84 @@
+###################################
+###################################
+###            GRACE            ###
+###################################
+###################################
+
+###################################
+###            Layout           ###
+###################################
+
+## Create scaling for GRACE compids ##
+#NOT TESTED# GRACE-0001_createscaling.xml
+
+## Create palettes for GRACE ##
+#NOT TESTED#  GRACE-0002_createpalettes.xml
+
+## Create legend for GRACE ##
+#NOT TESTED#  GRACE-0003_createlegends.xml
+
+## Export legends for GRACE ##
+#NOT TESTED#  GRACE-0005_exportlegend.xml
+
+## Create movie clock ##
+##NOTDONE##
+#smap_createmovieclock.xml
+
+#Create the graticule to use for map layout
+#NOT TESTED#  GRACE-0925_graticule_ExporttoSVG.xml
+
+###################################
+### Search, download & oganize  ###
+###################################
+
+## The GRACE mission is finished and the data must be
+## manually searched and downloaded as described in the
+## SMAP blogpost: https://karttur.github.io/geoimagine/blog/blog-SMAP/
+
+## Altered in version 0.9.0
+
+## Search DAAC for GRACE (retrieve html)
+
+## json/GRACE-0100_search-podaac_v090.json
+
+## curl Grace directly from html (no db entry on raw grace data)
+json/GRACE-0115_curl-podaac_v090.json
+
+## Organize the downloaded GRACE data ##
+#NOT TESTED#  GRACE-0101_organize.xml
+
+## Mend GRACE by interpolating missing dates ##
+#NOT TESTED#  GRACE-0111_mendts.xml
+
+## Average the three GRACE solutions ##
+#NOT TESTED#  GRACE-0115_average.xml
+
+## Convert month format to karttur standard ##
+#NOT TESTED#  GRACE-0120_monthdaytomonth.xml
+
+## Alternative import pre-processed GRACE data and update db ##
+#NOT TESTED#  GRACE-0190_updatedb.xml
+
+###################################
+###   Time series processing    ###
+###################################
+
+## Extract GRACE seasonal signal ##
+#NOT TESTED#  GRACE-0231_extract-season.xml
+
+## Resample Grace to Annual ##
+#NOT TESTED#  GRACE-0290_resample-2-annual.xml
+
+## Estimate trend from annual timestep ##
+#NOT TESTED#  GRACE-0310_trend_A_2003-2016.xml
+
+## Calculate annual changes 2003 t0 2016 ##
+#NOT TESTED#  GRACE-0320_changes_A_2003-2016.xml
+
+
+###################################
+###        Export media         ###
+###################################
+
+## Export annual statistics, trends and changes ##
+#NOT TESTED#  GRACE-0910_ExporttoByte_timespanA_2003-2016.xml

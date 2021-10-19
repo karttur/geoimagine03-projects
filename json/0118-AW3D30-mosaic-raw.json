@@ -1,0 +1,45 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "MosaicAncillary",
+      "overwrite": false,
+      "parameters": {
+        "mosaiccode": "subdirfiles",
+        "datadir": "RAWAUXILIARY/AW3D30/AW3D30_alos",
+        "datafile": "aw3d30_mosaic"
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "vrt"
+      },
+      "dstcomp": [
+        {
+          "aw3d30": {
+            "source": "ALOS",
+            "product": "aw3d30",
+            "content": "dem",
+            "layerid": "aw3d30",
+            "prefix": "dem30",
+            "suffix": "v01",
+            "cellnull": -9999
+          }
+        }
+      ]
+    }
+  ]
+}

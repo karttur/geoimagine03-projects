@@ -1,0 +1,87 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "system"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": {
+    "processid": "AddRasterPalette",
+    "overwrite": true,
+    "parameters": {
+      "palette": "grace",
+      "compid": "test",
+      "setcolor": {
+        "0": {
+          "red": "96",
+          "green": "0",
+          "blue": "0",
+          "alpha": "0",
+          "label": "0",
+          "hint": "0"
+        },
+        "63": {
+          "red": "204",
+          "green": "74",
+          "blue": "70",
+          "alpha": "0",
+          "label": "25",
+          "hint": "NA"
+        },
+        "125": {
+          "red": "224",
+          "green": "224",
+          "blue": "224",
+          "alpha": "0",
+          "label": "50",
+          "hint": "50"
+        },
+        "187": {
+          "red": "60",
+          "green": "170",
+          "blue": "190",
+          "alpha": "0",
+          "label": "75",
+          "hint": "NA"
+        },
+        "250": {
+          "red": "4",
+          "green": "4",
+          "blue": "110",
+          "alpha": "0",
+          "label": "100",
+          "hint": "100"
+        },
+        "253": {
+          "red": "240",
+          "green": "240",
+          "blue": "132",
+          "alpha": "0",
+          "label": "dry (0)",
+          "hint": "NA"
+        },
+        "254": {
+          "red": "32",
+          "green": "32",
+          "blue": "32",
+          "alpha": "255",
+          "label": "frame",
+          "hint": "frame"
+        },
+        "255": {
+          "red": "250",
+          "green": "250",
+          "blue": "250",
+          "alpha": "255",
+          "label": "255",
+          "hint": "no data"
+        }
+      }
+    }
+  }
+}

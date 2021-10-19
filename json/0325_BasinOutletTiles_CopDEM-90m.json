@@ -1,0 +1,143 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-northlandease2n",
+    "tractid": "karttur-northlandease2n",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ease2n"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "BasinOutletTiles",
+      "version": "1.3",
+      "overwrite": true,
+      "dryrun": false,
+      "verbose": 1,
+      "parameters": {
+        "grassdem": "DEM",
+        "basincelltrehshold": 617,
+        "asscript": true,
+        "mosaic": true,
+        "memory": 6000
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "shp"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "shp"
+      },
+      "srccomp": [
+        {
+          "outlet-pt": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "basin-mouths-prel",
+            "layerid": "outlets-pt",
+            "prefix": "outlets-pt",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "shorewall-pt": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "basin-mouths-prel",
+            "layerid": "shorewall-pt",
+            "prefix": "shorewall-pt",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "dem": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "copdem",
+            "prefix": "dem",
+            "suffix": "v01-pfpf-hydrdem4+4-90m",
+            "ext": "tif"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "outlet-pt": {
+            "source": "copy",
+            "product": "copy",
+            "content": "basin-mouths",
+            "layerid": "outlets-pt",
+            "prefix": "outlets-pt",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        },
+        {
+          "dem": {
+            "source": "copy",
+            "product": "copy",
+            "content": "flowdir",
+            "layerid": "flowdir",
+            "prefix": "flowdir",
+            "suffix": "v01-pfpf-hydrdem4+4-90m",
+            "ext": "tif"
+          }
+        }
+      ]
+    },
+    {
+      "processid": "Grass1to1Tiles",
+      "version": "1.3",
+      "overwrite": false,
+      "parameters": {
+        "regionlayer": "inland_comp_DEM",
+        "asscript": false,
+        "mosaic": false,
+        "subparameter": [
+          {
+            "r.out.gdal": {
+              "input": "basin_distill_MOUTH_basin_dem",
+              "output": "dstFPN"
+            }
+          }
+        ]
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "tif"
+      },
+      "srccomp": [
+        {
+          "copdem90": {
+            "source": "ESA",
+            "product": "copdem",
+            "content": "dem",
+            "layerid": "copdem",
+            "prefix": "dem",
+            "suffix": "v01-90m"
+          }
+        }
+      ],
+      "dstcopy": [
+        {
+          "copdem90": {
+            "source": "copy",
+            "product": "copy",
+            "content": "hydrodem",
+            "layerid": "dem-mouthfix",
+            "prefix": "dem-mouthfix",
+            "suffix": "v01-pfpf-hydrdem4+4-90m"
+          }
+        }
+      ]
+    }
+  ]
+}

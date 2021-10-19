@@ -1,0 +1,84 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur",
+    "tractid": "karttur",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "timestep": "allscenes"
+  },
+  "process": [
+    {
+      "processid": "OrganizeGrace",
+      "overwrite": false,
+      "parameters": {
+        "feature": "land_mass",
+        "model": "RL06",
+        "version": "v03",
+        "solutionset": "CSR",
+        "accessdate": "20210210",
+        "dataurl": "https://grace.jpl.nasa.gov/data/get-data/",
+        "metaurl": "https://grace.jpl.nasa.gov/data/get-data/",
+        "title": "GRACE global data",
+        "label": "GRACE (Gravity Recovery and Climate Experiment) global data"
+      },
+      "srcpath": {
+        "volume": "karttur",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "karttur",
+        "hdr": "tif"
+      }
+    },
+    {
+      "processid": "OrganizeGrace",
+      "overwrite": false,
+      "parameters": {
+        "feature": "land_mass",
+        "model": "RL06",
+        "version": "v03",
+        "solutionset": "GFZ",
+        "accessdate": "20210210",
+        "dataurl": "https://grace.jpl.nasa.gov/data/get-data/",
+        "metaurl": "https://grace.jpl.nasa.gov/data/get-data/",
+        "title": "GRACE global data",
+        "label": "GRACE (Gravity Recovery and Climate Experiment) global data"
+      },
+      "srcpath": {
+        "volume": "karttur",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "karttur",
+        "hdr": "tif"
+      }
+    },
+    {
+      "processid": "OrganizeGrace",
+      "overwrite": false,
+      "parameters": {
+        "feature": "land_mass",
+        "model": "RL06",
+        "version": "v03",
+        "solutionset": "JPL",
+        "accessdate": "20210210",
+        "dataurl": "https://grace.jpl.nasa.gov/data/get-data/",
+        "metaurl": "https://grace.jpl.nasa.gov/data/get-data/",
+        "title": "GRACE global data",
+        "label": "GRACE (Gravity Recovery and Climate Experiment) global data"
+      },
+      "srcpath": {
+        "volume": "karttur",
+        "hdr": "tif"
+      },
+      "dstpath": {
+        "volume": "karttur",
+        "hdr": "tif"
+      }
+    }
+  ]
+}

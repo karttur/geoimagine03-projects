@@ -1,0 +1,152 @@
+{
+  "userproject": {
+    "userid": "karttur",
+    "projectid": "karttur-swedendmarine",
+    "tractid": "karttur-swedendmarine",
+    "siteid": "*",
+    "plotid": "*",
+    "system": "ancillary"
+  },
+  "period": {
+    "timestep": "static"
+  },
+  "process": [
+    {
+      "processid": "OrganizeAncillary",
+      "parameters": {
+        "importcode": "shp",
+        "epsg": "3006",
+        "orgid": "SMHI",
+        "dsname": "SVAR",
+        "dsversion": "2016",
+        "accessdate": "20210317",
+        "regionid": "se",
+        "regioncat": "country",
+        "dataurl": "",
+        "metaurl": "",
+        "title": "Svenskt vattenarkiv",
+        "label": "Svenskt vattenarkiv",
+        "copyright": "unknown",
+        "replacestr": "",
+        "replacetag": ""
+      },
+      "srcpath": {
+        "volume": "Ancillary",
+        "hdr": "shp",
+        "dat": ""
+      },
+      "dstpath": {
+        "volume": "Ancillary",
+        "hdr": "shp",
+        "dat": ""
+      },
+      "srcraw": [
+        {
+          "haro": {
+            "datadir": "RAWAUXILIARY/SMHI/SVAR/Huvudavrinningsomraden_haro_y_2016_3",
+            "datafile": "Haro_y_2016_3",
+            "datalayer": "Haro_y_2016_3",
+            "title": "Drainage basins",
+            "label": "Drainage basins",
+            "cellnull": 0
+          },
+          "aro": {
+            "datadir": "RAWAUXILIARY/SMHI/SVAR/avrinningsomraden_aro_y_2016_3",
+            "datafile": "aro_y_2016_3",
+            "datalayer": "aro_y_2016_3",
+            "title": "Drainage sub basins",
+            "label": "Drainage sub basins",
+            "cellnull": 0
+          },
+          "vd": {
+            "datadir": "RAWAUXILIARY/SMHI/SVAR/flodeslinjer_vd_l_2016_3",
+            "datafile": "vd_l_2016_3",
+            "datalayer": "vd_l_2016_3",
+            "title": "Streams",
+            "label": "Flowlines for Swedish water courses",
+            "cellnull": 0
+          },
+          "vy": {
+            "datadir": "RAWAUXILIARY/SMHI/SVAR/Vattenytor_vy_y_2016_3",
+            "datafile": "vy_y_2016_3",
+            "datalayer": "vy_y_2016_3",
+            "title": "Lakes",
+            "label": "Swedish lakes",
+            "cellnull": 0
+          }
+        }
+      ],
+      "dstcomp": [
+        {
+          "haro": {
+            "masked": "Y",
+            "measure": "R",
+            "source": "SMHI",
+            "product": "SVAR",
+            "content": "mainbasins",
+            "layerid": "haro",
+            "prefix": "haro",
+            "suffix": "2016",
+            "scalefac": "1",
+            "offsetadd": "0",
+            "dataunit": "class",
+            "celltype": "vector",
+            "cellnull": "0"
+          }
+        },
+        {
+          "aro": {
+            "masked": "Y",
+            "measure": "R",
+            "source": "SMHI",
+            "product": "SVAR",
+            "content": "subbasins",
+            "layerid": "aro",
+            "prefix": "aro",
+            "suffix": "2016",
+            "scalefac": "1",
+            "offsetadd": "0",
+            "dataunit": "class",
+            "celltype": "vector",
+            "cellnull": "0"
+          }
+        },
+
+        {
+          "vd": {
+            "masked": "Y",
+            "measure": "R",
+            "source": "SMHI",
+            "product": "SVAR",
+            "content": "waterlines",
+            "layerid": "channels",
+            "prefix": "channels",
+            "suffix": "2016",
+            "scalefac": "1",
+            "offsetadd": "0",
+            "dataunit": "class",
+            "celltype": "vector",
+            "cellnull": "0"
+          }
+        },
+        {
+        "vy": {
+          "masked": "Y",
+          "measure": "R",
+          "source": "SMHI",
+          "product": "SVAR",
+          "content": "waterareas",
+          "layerid": "lakes",
+          "prefix": "lakes",
+          "suffix": "2016",
+          "scalefac": "1",
+          "offsetadd": "0",
+          "dataunit": "class",
+          "celltype": "vector",
+          "cellnull": "0"
+        }
+      }
+      ]
+    }
+  ]
+}
